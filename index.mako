@@ -11,7 +11,7 @@
 
   <div class="container">
     <div class="row">
-     <div class="col-md-12">
+      <div class="col-md-12">
         <div class="well">
           <p class="lead">
             I am Luke Olson
@@ -19,6 +19,7 @@
         </div>
       </div>
     </div>
+  </div>
 
   <%block name="extra_scripts">
   </%block>
