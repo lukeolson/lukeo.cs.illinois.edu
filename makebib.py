@@ -1,73 +1,207 @@
-from pybtex.database.input.bibtex import Parser
-from pybtex.database.output.bibtex import Writer
-from pybtex.database import BibliographyData
-from pybtex.backends import html
-from pybtex.style.formatting import plain, unsrt
-from StringIO import StringIO
-
 """
-Creates a dictionary of pubs:
-    'key'    : bib key (force lowercase)
-    'year'   : year of bib (for sorting)
-    'bibtex' : bibtex raw text
-    'html'   : formatted text
-    'pdf'    : path/to/localpaper.pdf
-    'doi'    : doi
-    'url'    : some url
-
-see:
-https://github.com/andreas-h/pelican-bibtex/blob/3d69cddfc48fcb044c19d0804db26b70e8e00194/pelican_bibtex.py#L81
-
-- depends on pybtex
-- pybtex parser returns keys in an ordered dict
-- pubs: dictionary of entries
-- orderedkeys: list of keys for the dictionary
+this is a hack to generate html + bibtex entries
 """
+
+import bibtexparser
+from bibtexparser.bparser import BibTexParser
+import bibtexparser.customization as cst
+
+# list all fields and in which order they should appear in the printed bibtex
+allfields = ['author',
+             'title',
+             'journal',
+             'year',
+             'address',
+             'annote',
+             'booktitle',
+             'chapter',
+             'edition',
+             'editor',
+             'eprint',
+             'howpublished',
+             'institution',
+             'key',
+             'month',
+             'volume',
+             'note',
+             'number',
+             'organization',
+             'pages',
+             'publisher',
+             'school',
+             'series']
+
+alltypes = ['techreport', 'article', 'inproceedings', 'phdthesis']
+
+
+def cust(rec):
+    return cst.author(rec)
+
+
+def tex2html(tex, styling=None):
+    """
+    simple translator from LaTeX to HTML:
+        - $$ -> <i></i> if styling not 'it'
+        - \& -> &amp;
+        - \rm -> ''
+        - finally, get rid of {}
+        - change styling of full string
+
+    should use regex if more complicated...
+    """
+
+    while '$' in tex:
+        if styling is not 'it':
+            tex = tex.replace('$', '<span style="font-style: italics;">', 1)
+        else:
+            tex = tex.replace('$', '<span style="font-style: normal;">', 1)
+        tex = tex.replace('$', '</span>', 1)
+
+    while '\&' in tex:
+        tex = tex.replace('\&', '&amp;')
+
+    while '\rm' in tex:
+        tex = tex.replace('\rm', '')
+
+    while '{' in tex:
+        tex = tex.replace('{', '')
+
+    while '}' in tex:
+        tex = tex.replace('}', '')
+
+    if styling is 'it':
+        html = '<span style="font-style: italics;">' + tex + '</span>'
+    elif styling is 'sc':
+        html = '<span style="font-variant: small-caps;">' + tex + '</span>'
+    elif styling is 'paren':
+        html = '(' + tex + ')'
+    else:
+        html = '<span style="font-style: normal;">' + tex + '</span>'
+
+    return html
+
+
+def whichfields(bibtype, style='siam'):
+
+    if style == 'siam':
+        """
+        kind of mimics the siam.bst
+        """
+        if bibtype == 'article':
+            allfields = ['author', 'title', 'journal', 'volume', 'year',
+                         'pages', 'note']
+
+        if bibtype == 'techreport':
+            allfields = ['author', 'title', 'number', 'institution', 'address',
+                         'month', 'year', 'note']
+
+        if bibtype == 'inproceedings':
+            allfields = ['author', 'title', 'booktitle', 'volume', 'number',
+                         'address', 'organization', 'publisher', 'year',
+                         'note']
+
+        if bibtype == 'phdthesis':
+            allfields = ['author', 'title', 'school', 'address', 'month',
+                         'year', 'note']
+
+    styling = {}
+    styling['authors'] = 'sc'  # small caps
+    styling['title'] = 'it'  # italics
+    styling['note'] = 'it'  # italics
+
+    return allfields, styling
+
+
+def generate_bibtex(entry, bibid, bibtype):
+    bibtex = '@%s{%s,\n' % (bibtype, bibid)
+
+    for field in allfields:
+        if field in entry:
+            e = entry[field]
+            if field == 'author':
+                e = ' and '.join(e)
+
+            # right justify the field 16 characters
+            # add the entry
+            bibtex += '%s = {%s},\n' % (field.rjust(16), e)
+
+    bibtex += '}'
+
+    return bibtex
+
+
+def generate_html(entry, bibid, bibtype, style='siam'):
+
+    allfields, styling = whichfields(bibtype, style)
+
+    html = ''
+    for field in allfields:
+        if field in entry:
+            s = None
+            tex = entry[field]
+            if field in styling:
+                s = styling[field]
+            if (field is 'author'):
+                for tex in entry[field]:
+                    html += tex2html(tex, s) + ', '
+            elif (field is 'year') and ('volume' in entry):
+                html = entry['volume'] + ' (' + tex + ')'
+            elif (field is 'volume') and ('year' in entry):
+                pass
+            else:
+                html += tex2html(tex, s) + ', '
+
+    return html[:-2] + '.'
 
 
 def generate_pubs(bibfile):
-    p = Parser()
-    style = plain.Style()
-    style = unsrt.Style()
+    """
+        - parse the bibfile
+        - transform each entry into an html string
+        - keep pdf, doi, url separate if available
 
-    # blank out the url, doi, etc in the actual entry.  Add later.
-    def blank(e):
-        return ''
-    style.format_web_refs = blank
+    Create a list of pubs:
+        'id'     : bib key
+        'type'   : pub type
+        'year'   : year of bib (for sorting I guess)
+        'bibtex' : raw bibtex text
+        'html'   : formatted text
+        'pdf'    : path/to/localpaper.pdf
+        'doi'    : doi
+        'url'    : some url
+    """
 
-    # parse bib file
-    bibs = p.parse_file(bibfile)
-    orderedkeys = bibs.entries.keys()
-    formattedbibs = style.format_entries(bibs.entries.values())
+    with open(bibfile) as bibtex_file:
+        parser = BibTexParser()
+        parser.customization = cust
+        rawdata = bibtexparser.load(bibtex_file, parser=parser).entries
 
-    pubs = {}
+    pubs = []
+    for rawentry in rawdata:
+        entry = {}
 
-    for bib in formattedbibs:
-        bibtex = bibs.entries[bib.key]
-        bibtexkeys = [k.lower() for k in bibtex.fields.keys()]
-        year = bibtex.fields.get('year')
-        pdf = bibtex.fields.get('pdf') if 'pdf' in bibtexkeys else None
-        doi = bibtex.fields.get('doi') if 'doi' in bibtexkeys else None
-        url = bibtex.fields.get('url') if 'url' in bibtexkeys else None
+        # first three: id, type, year
+        entry['id'] = rawentry.pop('id')
+        entry['type'] = rawentry.pop('type')
+        if 'year' in rawentry:
+            entry['year'] = rawentry['year']
 
-        f = StringIO()
-        bibdata = BibliographyData(entries={bib.key: bibtex})
-        Writer().write_stream(bibdata, f)
-        bibtexraw = f.getvalue()
-        print bib.text
-        break
-        htmltext = bib.text.render(html.Backend())
+        # generate raw bibtex string
+        entry['bibtex'] = generate_bibtex(rawentry, entry['id'], entry['type'])
 
-        pubs[bib.key] = {'year': year,
-                         'bibtex': bibtexraw,
-                         'html': htmltext,
-                         'pdf': pdf,
-                         'doi': doi,
-                         'url': url}
-    return pubs, orderedkeys
+        # generate html string
+        entry['html'] = generate_html(rawentry, entry['id'], entry['type'])
 
+        # pdf
+        # doi
+        # url
+        extrafields = ['pdf', 'doi', 'url']
+        for field in extrafields:
+            if field in rawentry:
+                entry[field] = rawentry[field]
+        pubs.append(entry)
 
-def print_pubs(pubs, orderedkeys):
-    print pubs.keys()
-    for key in orderedkeys:
-        print pubs[key]['year']
+    return pubs
+
+if __name__ == '__main__':
+    pubs = generate_pubs('refs.bib')
