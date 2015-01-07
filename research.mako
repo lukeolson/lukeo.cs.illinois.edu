@@ -10,8 +10,8 @@
 <%block name="full_content">
 
 <%
-import bibtexparser
-pubs, orderedkeys = bibtexparser.generate_pubs('refs.bib')
+import makebib
+pubs = makebib.generate_pubs('refs.bib')
 %>
 
   <div class="container">
@@ -26,31 +26,35 @@ pubs, orderedkeys = bibtexparser.generate_pubs('refs.bib')
     </div>
     <div class="row">
       <div class="col-md-12">
-      <ul class="list-group">
-      %for key in orderedkeys:
-        <li class="list-group-item">
-          ${pubs[key]["html"]}
-        </li>
-      %endfor
-      </ul>
+        <ul class="fa-ul bibliography">
+          %for entry in pubs:
+            <li><i class="fa-li fa fa-square"></i>
+              ${entry["html"]}
+              <br/>
+              <span class="bibtex">[<a style="cursor:pointer;" title="Show BibTeX entry"><i class="fa fa-toggle-on fa-3x"></i> BibTeX</a>]
+                <div class="bibtex-body" style="display:none">
+                  <pre>
+${entry["bibtex"]}
+                  </pre>
+                </div>
+              </span>
+              &nbsp;
+              %if "pdf" in entry:
+                <a href="${entry["pdf"]}"><i class="fa fa-file-pdf-o fa-3x"></i>PDF</a>
+              %endif
+            </li>
+          %endfor
+        </ul>
       </div>
     </div>
   </div>
 
-        <span class="bibtex">[<a style="cursor:pointer;" title="Show BibTeX entry">BibTeX</a>]
-          <div class="bibtex-body" style="display:none">
-            <pre>
-@article{somekey,
-    author = "Some Author",
-    title = "Some Title",
-    journal = "Some Journal",
-    url = "http://www.google.com",
-    year = "2014",
-}
-</pre>
-          </div>
-        </span>
 
   <%block name="extra_scripts">
+    <script>
+      $('.bibtex').click(function(){
+        $('> .bibtex-body', this).toggle();
+      })
+    </script>
   </%block>
 </%block>

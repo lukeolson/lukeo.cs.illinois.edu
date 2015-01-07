@@ -44,6 +44,7 @@ def tex2html(tex, styling=None):
         - $$ -> <i></i> if styling not 'it'
         - \& -> &amp;
         - \rm -> ''
+        - -- -> -
         - finally, get rid of {}
         - change styling of full string
 
@@ -60,6 +61,9 @@ def tex2html(tex, styling=None):
     while '\&' in tex:
         tex = tex.replace('\&', '&amp;')
 
+    while '--' in tex:
+        tex = tex.replace('--', '-')
+
     while '\rm' in tex:
         tex = tex.replace('\rm', '')
 
@@ -70,7 +74,7 @@ def tex2html(tex, styling=None):
         tex = tex.replace('}', '')
 
     if styling is 'it':
-        html = '<span style="font-style: italics;">' + tex + '</span>'
+        html = '<span style="font-style: italic;">' + tex + '</span>'
     elif styling is 'sc':
         html = '<span style="font-variant: small-caps;">' + tex + '</span>'
     elif styling is 'paren':
@@ -105,9 +109,9 @@ def whichfields(bibtype, style='siam'):
                          'year', 'note']
 
     styling = {}
-    styling['authors'] = 'sc'  # small caps
-    styling['title'] = 'it'  # italics
-    styling['note'] = 'it'  # italics
+    styling['author'] = 'sc'  # small caps
+    styling['title'] = 'it'  # italic
+    styling['note'] = 'it'  # italic
 
     return allfields, styling
 
@@ -145,7 +149,7 @@ def generate_html(entry, bibid, bibtype, style='siam'):
                 for tex in entry[field]:
                     html += tex2html(tex, s) + ', '
             elif (field is 'year') and ('volume' in entry):
-                html = entry['volume'] + ' (' + tex + ')'
+                html += entry['volume'] + ' (' + tex + '), '
             elif (field is 'volume') and ('year' in entry):
                 pass
             else:

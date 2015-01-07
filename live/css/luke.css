@@ -34,3 +34,12 @@ body > .container {
 code {
   font-size: 80%;
 }
+
+ul.bibliography {
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 120%;
+}
+
+ul.bibliography li {
+    padding-bottom: 15px;
+}
