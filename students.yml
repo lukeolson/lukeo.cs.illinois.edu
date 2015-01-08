@@ -1,0 +1,112 @@
+- name:
+  # current | former
+  category:
+  blurb:
+  url:
+  # Drop images into live/images
+  # 300x200 preferred.
+  image:
+  degree:
+  year:
+  thesis:
+  dept:
+
+- name: Amanda Bienz
+  category: current
+  blurb: reducing communication in sparse solvers, HPC, multigrid
+  image: amanda-bienz.jpg
+
+- name: Natalie Beams
+  category: current
+  blurb: N-body methods, finite elements, multigrid
+  dept: Mechanical Engineering
+  image: natalie-beams.jpg
+
+- name: Jon Calhoun
+  category: current
+  blurb: fault detection and recovery in numerical algorithms, multigrid
+  url: http://ews.illinois.edu/~jccalho2/
+  image: jon-calhoun.jpg
+
+- name: Nathan Bowman
+  category: current
+  blurb: locality, scalability, efficiency of sparse computations
+
+- name: Erin Carrier
+  category: current
+  blurb: mesh refinement and optimization on GPUs
+
+- name: Erin Molloy
+  category: current
+  blurb: algebraic multigrid, graphs problems, high dimensional problems
+
+- name: Andrew Reisner
+  category: current
+  blurb: structured solvers, electric field computations
+
+- name: Scott High
+  category: current
+  blurb: particle-in-cell methods, scalable algorithms
+
+- name: Steven Dalton
+  category: former
+  degree: PhD
+  year: 2014
+  url: https://research.nvidia.com/users/steven-dalton
+  blurb: algebraic multigrid, sparse matrix computaitons, GPU, high-throughput algorithms
+  thesis: Data parallel algebraic multigrid
+
+- name: Yuki Kimura
+  category: former
+  degree: PhD
+  year: 2013
+  dept: Chemical Engineering
+  url: https://www.linkedin.com/pub/yuki-kimura/40/197/36
+  blurb: chemotaxis, neutrophil, bacteria, multiscale simulation, finite elements
+  thesis: Cellular strategies for chemotactic navigation in complex chemical environments
+  thesisurl: https://www.ideals.illinois.edu/handle/2142/42183
+
+- name: James Lai
+  category: former
+  degree: PhD
+  year: 2012
+  url: https://www.linkedin.com/in/jhlai2
+  blurb: algebraic multigrid, least-squares and discontinuous least-squares finite element methods, high-order, vector ele     ments, Stokes flow
+  thesis: Conservation and efficiency in least squares finite element methods
+  thesisurl: http://hdl.handle.net/2142/34237
+
+- name: Jehanzeb Hameed Chaudhry
+  category: former
+  degree: PhD
+  year: 2011
+  url: http://www.math.colostate.edu/~hameed/
+  blurb: implicit solvation models, least-squares finite element methods, Poisson-Boltzmann equation, Poisson-Nerst-Planck     , error adaptivity, adjoint estimators
+  thesis: Finite element methods for implicit solvent models
+  thesisurl: http://hdl.handle.net/2142/26319
+
+- name: Jacob Schroder
+  category: former
+  degree: PhD
+  year: 2010
+  url: http://people.llnl.gov/schroder2
+  blurb: algebraic multigrid, complex non-symmetric matrices, high-order discontinuous Galerkin
+  thesis: Generalizing smoothed aggregation-based algebraic multigrid
+  thesisurl: http://dl.acm.org/citation.cfm?id=2126236
+
+- name: Nathan Bell
+  category: former
+  degree: PhD
+  year: 2008
+  url: http://wnbell.com/
+  blurb: discrete exterior calculus, algebraic multigrid, hodge decomposisions
+  thesis: Algebraic Multigrid For Discrete Differential Forms
+  thesisurl: http://hdl.handle.net/2142/11474
+
+- name: David Alber
+  category: former
+  degree: PhD
+  year: 2007
+  url: http://www.davidalber.net/
+  blurb: parallel algebraic multigrid methods, high performance computing, combinatorial scientific computing
+  thesis: Efficient Setup Algorithms for Parallel Algebraic Multigrid
+  thesisurl: http://hdl.handle.net/2142/11320

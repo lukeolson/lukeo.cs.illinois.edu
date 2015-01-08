@@ -35,7 +35,8 @@ alltypes = ['techreport', 'article', 'inproceedings', 'phdthesis']
 
 
 def cust(rec):
-    return cst.author(rec)
+    rec = cst.author(rec)
+    return rec
 
 
 def tex2html(tex, styling=None):
@@ -72,6 +73,9 @@ def tex2html(tex, styling=None):
 
     while '}' in tex:
         tex = tex.replace('}', '')
+
+    if 'Olson' in tex:
+        tex = '<span style="font-weight: bold;">' + tex + '</span>'
 
     if styling is 'it':
         html = '<span style="font-style: italic;">' + tex + '</span>'
@@ -178,6 +182,7 @@ def generate_pubs(bibfile):
     with open(bibfile) as bibtex_file:
         parser = BibTexParser()
         parser.customization = cust
+        parser.homogenise_fields = False
         rawdata = bibtexparser.load(bibtex_file, parser=parser).entries
 
     pubs = []
