@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Data for SpGEMM</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/sticky-footer.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="page-header">
+          <h1>Data for SpGEMM:</h1>
+        </div>
+        <p>
+
+        This contains all the matrices for the SpGEMM tests presented in <a href="http://lukeo.cs.illinois.edu/research"><i>Optimizing Sparse Matrix-Matrix Multiplication for the GPU</i></a>, by <a href="http://ews.illinois.edu/~dalton6/">Steven Dalton</a> and <a href="http://lukeo.cs.illinois.edu/">Luke N. Olson</a>.
+
+Each <i>A</i> matrix has an companion matrix <i>P</i> in the directory. The storage scheme appends "_P" to the end of the <i>A</i> matrix filename.
+
+<br/>
+</p>
+<p class="lead">The full set of matrices: <a href="https://uofi.box.com/shared/static/3ztdobvh4kyc2axwzqo9.tar">matrices.tar</a></p>
+<p class="lead">Finite Element:</p>
+<p>
+From Table 3 in the paper:
+<table>
+  <tr><td> 1a            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; structured_2d_5pt.mtx.gz             </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; structured_2d_5pt_P.mtx.gz           </td></tr>
+  <tr><td> 1b            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; structured_2d_9pt.mtx.gz             </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; structured_2d_9pt_P.mtx.gz           </td></tr>
+  <tr><td> 2a            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; structured_3d_7pt.mtx.gz             </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; structured_3d_7pt_P.mtx.gz           </td></tr>
+  <tr><td> 2b            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; structured_3d_27pt.mtx.gz            </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; structured_3d_27pt_P.mtx.gz          </td></tr>
+  <tr><td> 3a            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mesh_2d_003.mtx.gz                   </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mesh_2d_003_P.mtx.gz                 </td></tr>
+  <tr><td> 3b            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mesh_2d_002.mtx.gz                   </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mesh_2d_002_P.mtx.gz                 </td></tr>
+  <tr><td> 3c            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mesh_2d_0015.mtx.gz                  </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mesh_2d_0015_P.mtx.gz                </td></tr>
+  <tr><td> 4             </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mesh_3d_015.mtx.gz                   </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mesh_3d_015_P.mtx.gz                 </td></tr>
+  <tr><td> 5a            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; horseshoe_matrix_anisotropic.mtx.gz  </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; horseshoe_matrix_anisotropic_P.mtx.gz</td></tr>
+  <tr><td> 5b            </td><td>  &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; square_matrix_anisotropic.mtx.gz     </td></tr>
+  <tr><td>               </td><td>  &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; square_matrix_anisotropic_P.mtx.gz   </td></tr>
+</table>
+</p>
+<p class="lead">UF data:</p>
+<p>
+From Table 3 in the paper:
+<table>
+  <tr><td> Cantilever 	   </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; cant.mtx.gz                         </td></tr>
+  <tr><td>                 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; cant_P.mtx.gz                       </td></tr>
+  <tr><td> Spheres 	     	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; consph.mtx.gz                       </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; consph_P.mtx.gz                     </td></tr>
+  <tr><td> Accelerator   	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; cop20k_A.mtx.gz                     </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; cop20k_A_P.mtx.gz                   </td></tr>
+  <tr><td> Economics     	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mac_econ_fwd500.mtx.gz              </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mac_econ_fwd500_P.mtx.gz            </td></tr>
+  <tr><td> Epidemiology  	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; mc2depi.mtx.gz                      </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; mc2depi_P.mtx.gz                    </td></tr>
+  <tr><td> Protein 	     	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; pdb1HYS.mtx.gz                      </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; pdb1HYS_P.mtx.gz                    </td></tr>
+  <tr><td> Wind Tunnel   	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; pwtk.mtx.gz                         </td></tr>
+  <tr><td>               	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; pwtk_P.mtx.gz                       </td></tr>
+  <tr><td> QCD 		       	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; qcd5_4.mtx.gz                       </td></tr>
+  <tr><td>     		       	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; qcd5_4_P.mtx.gz                     </td></tr>
+  <tr><td> Webbase 	     	 </td><td> &rarr;&nbsp; &nbsp; </td><td> A:&nbsp; &nbsp; webbase-1M.mtx.gz                   </td></tr>
+  <tr><td>         	     	 </td><td> &rarr;&nbsp; &nbsp; </td><td> P:&nbsp; &nbsp; webbase-1M_P.mtx.gz                 </td></tr>
+</table>
+</p>
+        </p>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">See <a href="http://lukeo.cs.illinois.edu/research"><i>Optimizing Sparse Matrix-Matrix Multiplication for the GPU</i></a> for more details.</p>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
