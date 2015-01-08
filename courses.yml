@@ -1,0 +1,98 @@
+- year:
+  url:
+  inst:
+  course:
+
+- year: Spring 2015
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+  url: http://lukeo.cs.illinois.edu/cs555/
+
+- year: Fall 2014
+  course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
+  inst: Illinois
+  url: http://lukeo.cs.illinois.edu/cs556/
+
+- year: Spring 2014
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+
+- year: Fall 2013
+  course: CS450 - Numerical Analysis
+  inst: Illinois
+
+- year: Spring 2013
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+
+- year: Fall 2012
+  course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
+  inst: Illinois
+
+- year: Spring 2012
+  course: CS450 - Numerical Analysis
+  inst: Illinois
+
+- year: Spring 2011
+  course: CS450 - Numerical Analysis
+  inst: Illinois
+
+- year: Fall 2010
+  course: CS556 - Iterative and Multigrid Methods
+  inst: Illinois
+
+- year: Spring 2010
+  course: CS457 - Intro to Numerical Methods II
+  inst: Illinois
+
+- year: Fall 2009
+  course: CS357 - Intro to Numerical Methods
+  inst: Illinois
+
+- year: Spring 2009
+  course: CS556 - Iterative and Multigrid Methods
+  inst: Illinois
+
+- year: Fall 2008
+  course: CS257 - Numerical Methods
+  inst: Illinois
+
+- year: Spring 2008
+  course: CS257 - Numerical Methods
+  inst: Illinois
+
+- year: Fall 2007
+  course: CS558 - Topics in Numerical Analysis - Applied Functional Analysis
+  inst: Illinois
+
+- year: Spring 2007
+  course: CS550 - Iterative and Multigrid Methods
+  inst: Illinois
+
+- year: Fall 2006
+  course: CS257 - Intro to Numerical Methods
+  inst: Illinois
+
+- year: Spring 2006
+  course: CS257 - Intro to Numerical Methods
+  inst: Illinois
+
+- year: Fall 2005
+  course: CS598 - High-Order Multidomain Methods
+  inst: Illinois
+
+- year: Spring 2005
+  course: AM194 - Iterative Methods
+  inst: Brown University
+
+- year: Fall 2004
+  course: AM34 - Methods of Applied Math II (Linear Algebra, ODE Systems, BVPs)
+  inst: Brown University
+
+- year: Spring 2004
+  course: AM194 - Multigrid Methods
+  inst: Brown University
+
+- year: Fall 2003
+  course: AM33 - Methods of Applied Math I (Scalar ODEs and Numerical Methods)
+  inst: Brown University

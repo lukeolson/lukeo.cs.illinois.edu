@@ -5,7 +5,7 @@
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
-files = ['index.mako', 'research.mako']
+files = ['index.mako', 'research.mako', 'teaching.mako']
 
 for f in files:
     fo = './live/' + f.strip('.mako') + '.html'

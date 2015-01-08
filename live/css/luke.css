@@ -109,3 +109,8 @@ ul.contact .fa-li {
 .student-name {
   font-weight: bold;
 }
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover {
+    background-color: #1C3862;
+}
