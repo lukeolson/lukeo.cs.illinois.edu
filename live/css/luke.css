@@ -114,3 +114,11 @@ ul.contact .fa-li {
 .nav-pills > li.active > a:hover {
     background-color: #1C3862;
 }
+
+ul.sidelist li {
+  padding-bottom: 15px;
+}
+
+resimg {
+  font-size: 75%;
+}

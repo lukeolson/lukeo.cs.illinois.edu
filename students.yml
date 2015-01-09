@@ -39,10 +39,12 @@
 - name: Erin Molloy
   category: current
   blurb: algebraic multigrid, graphs problems, high dimensional problems
+  image: erin-molloy.jpg
 
 - name: Andrew Reisner
   category: current
   blurb: structured solvers, electric field computations
+  image: andrew-reisner.jpg
 
 - name: Scott High
   category: current

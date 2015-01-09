@@ -42,6 +42,8 @@ indexactive = 'active'
       <div class="col-md-12">
         <div class="topline"></div>
         <h4 class="text-muted">Quick Info</h4>
+      </div>
+      <div class="col-md-8">
         <p>Learn more about my <b>reserach</b> in sparse matrix computations, finite elements, and high performance computing
            <a href="research.html">HERE</a>.
         </p>
@@ -60,6 +62,22 @@ indexactive = 'active'
           <li><i class="fa-li fa fa-users"></i><a href="http://cse.illinois.edu">Computational Science and Engineering (CSE) program at Illinois</a></li>
             </ul>
         </p>
+      </div>
+      <div class="col-md-4">
+        <div class="well well-sm">
+        <ul class="fa-ul sidelist" style="margin-left: 0px;">
+          <li><i class="fa-il fa fa-th fa-fat"></i>
+          <a href="http://xpacc.illinois.edu/">XPACC</a>: Center for Exascale Simulation of Plasma-Coupled Combustion</li>
+          <li><i class="fa-il fa fa-file-code-o"></i>
+          <a href="https://github.com/pyamg/pyamg">PyAMG</a>: Algebraic multigrid solvers in Python.</li>
+          <li><i class="fa fa-github"></i>
+          <a href="https://github.com/cusplibrary/cusplibrary">CUSP</a>: A C++ Templated Sparse Matrix Library</li>
+          <li><i class="fa fa-github"></i>
+          <a href="https://github.com/lukeolson">Github</a></li>
+          <li><i class="fa fa-bitbucket"></i>
+          <a href="https://bitbucket.org/lukeolson">BitBucket</a></li>
+        </ul>
+        </div>
       </div>
     </div>
     <div class="row">

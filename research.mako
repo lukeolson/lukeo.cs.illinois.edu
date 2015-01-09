@@ -14,6 +14,8 @@ researchactive = 'active'
 <%block name="content">
 
 <%
+import os.path
+
 import makebib
 pubs = makebib.generate_pubs('refs.bib')
 
@@ -21,6 +23,9 @@ import yaml
 from codecs import open
 with open("students.yml", "rt", encoding="utf-8") as inf:
   students = yaml.load(inf)
+
+with open("resimg.yml", "rt", encoding="utf-8") as inf:
+  resimg = yaml.load(inf)
 %>
 
   <div class="container">
@@ -159,6 +164,16 @@ ${entry["bibtex"]}
               %if "pdf" in entry:
                 &nbsp;
                 <a href="${entry["pdf"]}"><i class="fa fa-file-pdf-o"></i>PDF</a>
+              %else:
+                <%
+                pdfpath = './files/' + entry["id"] + '.pdf'
+                pdfexists = os.path.exists('./live/' + pdfpath)
+                %>
+                %if pdfexists:
+                  &nbsp;
+                  <a href="${pdfpath}"><i class="fa fa-file-pdf-o"></i>PDF</a>
+                %else:
+                %endif
               %endif
               %if "doi" in entry:
                 &nbsp;
@@ -171,6 +186,30 @@ ${entry["bibtex"]}
             </li>
           %endfor
         </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="topline"></div>
+        <h4 class="text-muted" id="images">Some Images</h4>
+        <% counter = 0 %>
+        %for res in resimg:
+          %if counter == 0:
+            <div class="row">
+          %elif counter % 3 == 0:
+            </div>
+            <div class="row">
+          %endif
+          <% counter += 1 %>
+          <div class="col-md-4">
+            <div style="height: 200px">
+              <img src="${res["image"]}" alt="${res["title"]}" height="200" class="img-rounded">
+            </div>
+            <span class="resimg">
+              ${res["title"]}: ${res["desc"]}
+            </span>
+          </div>
+        %endfor
       </div>
     </div>
   </div>
