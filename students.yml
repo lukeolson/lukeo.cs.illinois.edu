@@ -11,16 +11,21 @@
   thesis:
   dept:
 
-- name: Amanda Bienz
-  category: current
-  blurb: reducing communication in sparse solvers, HPC, multigrid
-  image: amanda-bienz.jpg
-
 - name: Natalie Beams
   category: current
   blurb: N-body methods, finite elements, multigrid
   dept: Mechanical Engineering
   image: natalie-beams.jpg
+
+- name: Amanda Bienz
+  category: current
+  blurb: reducing communication in sparse solvers, HPC, multigrid
+  image: amanda-bienz.jpg
+
+- name: Nathan Bowman
+  category: current
+  blurb: locality, scalability, efficiency of sparse computations
+  image: nathaniel-bowman.jpg
 
 - name: Jon Calhoun
   category: current
@@ -28,15 +33,15 @@
   url: http://ews.illinois.edu/~jccalho2/
   image: jon-calhoun.jpg
 
-- name: Nathan Bowman
-  category: current
-  blurb: locality, scalability, efficiency of sparse computations
-  image: nathaniel-bowman.jpg
-
 - name: Erin Carrier
   category: current
   blurb: mesh refinement and optimization on GPUs
   image: erin-carrier.jpg
+
+- name: Scott High
+  category: current
+  blurb: particle-in-cell methods, scalable algorithms
+  image: scott-high.jpg
 
 - name: Erin Molloy
   category: current
@@ -47,11 +52,6 @@
   category: current
   blurb: structured solvers, electric field computations
   image: andrew-reisner.jpg
-
-- name: Scott High
-  category: current
-  blurb: particle-in-cell methods, scalable algorithms
-  image: scott-high.jpg
 
 - name: Steven Dalton
   category: former
