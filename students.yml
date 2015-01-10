@@ -31,10 +31,12 @@
 - name: Nathan Bowman
   category: current
   blurb: locality, scalability, efficiency of sparse computations
+  image: nathaniel-bowman.jpg
 
 - name: Erin Carrier
   category: current
   blurb: mesh refinement and optimization on GPUs
+  image: erin-carrier.jpg
 
 - name: Erin Molloy
   category: current
@@ -49,6 +51,7 @@
 - name: Scott High
   category: current
   blurb: particle-in-cell methods, scalable algorithms
+  image: scott-high.jpg
 
 - name: Steven Dalton
   category: former

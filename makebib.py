@@ -31,7 +31,8 @@ allfields = ['author',
              'school',
              'series']
 
-alltypes = ['techreport', 'article', 'inproceedings', 'phdthesis']
+alltypes = ['techreport', 'article', 'inproceedings', 'incollection',
+            'phdthesis']
 
 
 def cust(rec):
@@ -103,7 +104,7 @@ def whichfields(bibtype, style='siam'):
             allfields = ['author', 'title', 'number', 'institution', 'address',
                          'month', 'year', 'note']
 
-        if bibtype == 'inproceedings':
+        if (bibtype == 'inproceedings') or (bibtype == 'incollection'):
             allfields = ['author', 'title', 'booktitle', 'volume', 'number',
                          'address', 'organization', 'publisher', 'year',
                          'note']

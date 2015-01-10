@@ -4,7 +4,7 @@
 </%block>
 
 <%block name="title">
-  Luke Olson @ Illinois
+  Luke Olson @ Illinois - Teaching
 </%block>
 
 <%!
