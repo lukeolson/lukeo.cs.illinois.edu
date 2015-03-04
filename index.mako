@@ -87,26 +87,23 @@ indexactive = 'active'
         <p>
         Background:
         <ul class="square">
-          <li>Associate Professor, Department of Computer Science, University of Illinois at Urbana-Champaign, 2011-present</li>
-          <li>Visiting Affiliate, Institute for Mathematics and Its Applications, University of Minnesota, 2011 (fall)</li>
-          <li>Affiliate Faculty, <a href="http://mechse.illinois.edu/">Department of Mechanical Science and Engineering</a>, University of Illinois at Urbana-Champaign, 2010-present</li>
-          <li>Assistant Professor, Department of Computer Science, University of Illinois at Urbana-Champaign, 2005-2011</li>
+          <li>Associate Professor, Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2011-present</li>
+            <ul>
+              <li>Affiliate Faculty, <a href="http://mechse.illinois.edu/">Dept. of Mechanical Science and Engineering</a></li>
+            </ul>
+            <li>Assistant Professor, Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2005-2011</li>
           <li>Visiting Assistant Professor/NSF VIGRE Postdoctoral Fellow, Division of Applied Mathematics, Brown University, 2003-2005</li>
         </ul>
         </p>
         <p>
         Education:
-        <ul class="square">
+        <ul>
           <li>PhD (2003), Applied Mathematics, University of Colorado at Boulder</li>
             <ul>
               <li>Thesis: <em>Multilevel Least-Squares Finite Element Methods for Hyperbolic PDEs</em></li>
-              <li>Advisors: Tom Manteuffel, Steve McCormick</li>
             </ul>
           <li>MS (1999), Mathematics (Applied), University of Iowa</li>
-            <ul>
-              <li>Areas: <em>PDEs, ODEs, Optimization, Numerical Analysis</em></li>
-            </ul>
-            <li>BA (1997), Physics and Mathematics, Luther College</li>
+          <li>BA (1997), Physics and Mathematics, Luther College</li>
         </ul>
         </p>
       </div>
