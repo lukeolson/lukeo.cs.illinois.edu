@@ -20,10 +20,12 @@
 - name: Amanda Bienz
   category: current
   blurb: reducing communication in sparse solvers, HPC, multigrid
+  url: http://web.engr.illinois.edu/~bienz2/
   image: amanda-bienz.jpg
 
 - name: Nathan Bowman
   category: current
+  url: http://web.engr.illinois.edu/~nlbowma2
   blurb: locality, scalability, efficiency of sparse computations
   image: nathaniel-bowman.jpg
 
@@ -32,11 +34,6 @@
   blurb: fault detection and recovery in numerical algorithms, multigrid
   url: http://ews.illinois.edu/~jccalho2/
   image: jon-calhoun.jpg
-
-- name: Erin Carrier
-  category: current
-  blurb: mesh refinement and optimization on GPUs
-  image: erin-carrier.jpg
 
 - name: Scott High
   category: current
@@ -50,6 +47,7 @@
 
 - name: Andrew Reisner
   category: current
+  url: http://www.reisner.co 
   blurb: structured solvers, electric field computations
   image: andrew-reisner.jpg
 
