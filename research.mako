@@ -150,16 +150,16 @@ with open("resimg.yml", "rt", encoding="utf-8") as inf:
         <h4 class="text-muted" id="publications">Publications</h4>
         <ul class="fa-ul bibliography">
           %for entry in pubs:
-            <li><i class="fa-li fa fa-caret-right"></i>
+              <li><a href="#${entry["id"]}"><i id = "${entry["id"]}" class="fa-li fa fa-caret-right"></i></a>
               ${entry["html"]}
               <br/>
               <span class="bibtex">
                 <a style="cursor:pointer;" title="Show BibTeX entry"><i class="fa fa-toggle-on"></i> BibTeX</a>
-                <div class="bibtex-body" style="display:none">
-                  <pre>
+              <div class="bibtex-body" style="display:none">
+                <pre>
 ${entry["bibtex"]}
-                  </pre>
-                </div>
+                </pre>
+              </div>
               </span>
               %if "pdf" in entry:
                 &nbsp;
@@ -218,7 +218,7 @@ ${entry["bibtex"]}
   <%block name="extra_scripts">
     <script>
       $('.bibtex').click(function(){
-        $('> .bibtex-body', this).toggle();
+        $('> .bibtex-body', this).show();
       })
     </script>
   </%block>

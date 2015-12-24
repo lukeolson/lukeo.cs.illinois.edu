@@ -113,6 +113,10 @@ def whichfields(bibtype, style='siam'):
             allfields = ['author', 'title', 'school', 'address', 'month',
                          'year', 'note']
 
+        if bibtype == 'inbook':
+            allfields = ['author', 'title', 'chapter', 'bookeditor', 'publisher',
+                         'year', 'note']
+
     styling = {}
     styling['author'] = 'sc'  # small caps
     styling['title'] = 'it'  # italic
@@ -190,9 +194,11 @@ def generate_pubs(bibfile):
     for rawentry in rawdata:
         entry = {}
 
+        if 'pdf' in rawentry:
+            print rawentry
         # first three: id, type, year
-        entry['id'] = rawentry.pop('id')
-        entry['type'] = rawentry.pop('type')
+        entry['id'] = rawentry.pop('ID')
+        entry['type'] = rawentry.pop('ENTRYTYPE')
         if 'year' in rawentry:
             entry['year'] = rawentry['year']
 
