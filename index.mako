@@ -56,9 +56,15 @@ indexactive = 'active'
         <p>
         I'm currently involved with the following <b>activities</b>; contact me if you want to know more!
             <ul class="fa-ul">
-          <li><i class="fa-li fa fa-users"></i>Organizing Committee, <a href="http://www.siam.org/meetings/cse15/">SIAM Conference on Computational Science and Engineering</a>, 2015</li>
-          <li><i class="fa-li fa fa-users"></i>Organizing Committee, <a href="http://grandmaster.colorado.edu/~copper/2015">Eighteenth Copper Mountain Conference on Multigrid Methods</a>, 2015</li>
-          <li><i class="fa-li fa fa-users"></i><a href="http://siam.cs.illinois.edu">SIAM Student Chapter at Illinois</a></li>
+                <li><i class="fa-li fa fa-users"></i>Organizing Committee,
+                    <a href="http://grandmaster.colorado.edu/~copper/2016">Fourteenth Copper Mountain Conference on Iterative Methods</a>, 2016</li>
+                <li><i class="fa-li fa fa-users"></i>Posters Vice-Chair,
+                    <a href="http://sc16.supercomputing.org">SuperComputing</a>, 2016</li>
+                <li><i class="fa-li fa fa-users"></i>Organizing Committee,
+                    <a href="http://www.siam.org/meetings/cse17/">SIAM Conference on Computational Science and Engineering</a>, 2017</li>
+                <li><i class="fa-li fa fa-users"></i>Co-Chair,
+                    <a href="http://grandmaster.colorado.edu/~copper/2017">Nineteenth Copper Mountain Conference on Multigrid Methods</a>, 2017</li>
+                <li><i class="fa-li fa fa-users"></i><a href="http://publish.illinois.edu/siam-uiuc/">SIAM Student Chapter at Illinois</a></li>
           <li><i class="fa-li fa fa-users"></i><a href="http://cse.illinois.edu">Computational Science and Engineering (CSE) program at Illinois</a></li>
             </ul>
         </p>
@@ -92,7 +98,7 @@ indexactive = 'active'
               <li>Affiliate Faculty, <a href="http://mechse.illinois.edu/">Dept. of Mechanical Science and Engineering</a></li>
             </ul>
             <li>Assistant Professor, Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2005-2011</li>
-          <li>Visiting Assistant Professor/NSF VIGRE Postdoctoral Fellow, Division of Applied Mathematics, Brown University, 2003-2005</li>
+            <li>Visiting Assistant Professor/NSF VIGRE Postdoctoral Fellow, Division of Applied Mathematics, Brown University, 2003-2005</li>
         </ul>
         </p>
         <p>
