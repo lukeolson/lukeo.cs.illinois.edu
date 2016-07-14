@@ -44,7 +44,7 @@ indexactive = 'active'
         <h4 class="text-muted">Quick Info</h4>
       </div>
       <div class="col-md-8">
-        <p>Learn more about my <b>reserach</b> in sparse matrix computations, finite elements, and high performance computing
+        <p>Learn more about my <b>research</b> in sparse matrix computations, finite elements, and high performance computing
            <a href="research.html">HERE</a>.
         </p>
         <p>Current course that I am <b>teaching</b> are
