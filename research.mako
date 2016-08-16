@@ -67,12 +67,12 @@ with open("resimg.yml", "rt", encoding="utf-8") as inf:
           %>
           %if counter == 0:
             <div class="row">
-          %elif counter % 4 == 0:
+          %elif counter % 3 == 0:
             </div>
             <div class="row">
           %endif
           <% counter += 1 %>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <div style="height: 150px">
               %if s.get("url"):
                 <a href="${s["url"]}">

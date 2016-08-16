@@ -18,8 +18,7 @@ indexactive = 'active'
       <div class="col-md-8">
         <ul class="list-unstyled">
         <li>Luke Olson</li>
-        <li>Associate Professor</li>
-        <li><a href="http://scicomp.cs.illinois.edu/">Scientific Computing Group</a></li>
+        <li>Professor, <a href="http://scicomp.cs.illinois.edu/">Scientific Computing Group</a></li>
         <li><a href="http://cs.illinois.edu/">Department of Computer Science</a></li>
         <li><a href="http://illinois.edu/">University of Illinois at Urbana-Champaign</a></li>
         </ul>
@@ -93,11 +92,10 @@ indexactive = 'active'
         <p>
         Background:
         <ul class="square">
-          <li>Associate Professor, Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2011-present</li>
+            <li>Professor, Assoc. Prof., Asst. Prof., Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2005-present</li>
             <ul>
               <li>Affiliate Faculty, <a href="http://mechse.illinois.edu/">Dept. of Mechanical Science and Engineering</a></li>
             </ul>
-            <li>Assistant Professor, Dept. of Computer Science, Univ. of Illinois at Urbana-Champaign, 2005-2011</li>
             <li>Visiting Assistant Professor/NSF VIGRE Postdoctoral Fellow, Division of Applied Mathematics, Brown University, 2003-2005</li>
         </ul>
         </p>
