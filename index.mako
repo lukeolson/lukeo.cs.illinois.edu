@@ -48,8 +48,7 @@ indexactive = 'active'
         </p>
         <p>Current course that I am <b>teaching</b> are
             <ul class="fa-ul">
-                <li><i class="fa-li fa fa-archive"></i><a href="https://relate.cs.illinois.edu/course/cs555-s16/">Spring 2016: CS555: Numerical Methods for PDEs</a></li>
-          <li><i class="fa-li fa fa-archive"></i><a href="http://lukeo.cs.illinois.edu/cs556/">Fall 2016: CS556: Iterative and multigrid methods</a></li>
+                <li><i class="fa-li fa fa-archive"></i><a href="http://go.illinois.edu/cs556/">Fall 2016: CS556: Iterative and multigrid methods</a></li>
             </ul>
         </p>
         <p>

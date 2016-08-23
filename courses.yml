@@ -3,15 +3,28 @@
   inst:
   course:
 
+- year: Fall 2016
+  course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs556-f16/
+
+- year: Spring 2016
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs555-s16/
+
+- year: Fall 2015
+  course: CS357 - Intro to Numerical Methods
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs357-f15
+
 - year: Spring 2015
   course: CS555 - Numerical Methods for Partial Differential Equations
   inst: Illinois
-  url: http://lukeo.cs.illinois.edu/cs555/
 
 - year: Fall 2014
   course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
   inst: Illinois
-  url: http://lukeo.cs.illinois.edu/cs556/
 
 - year: Spring 2014
   course: CS555 - Numerical Methods for Partial Differential Equations
