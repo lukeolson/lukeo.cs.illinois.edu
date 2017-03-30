@@ -1,3 +1,3 @@
 #!/bin/sh
 #rsync -ravz --dry-run --exclude-from sync-exclude -e ssh --delete ./live/ lukeo@web.engr.illinois.edu:~/public_html/.
-rsync -ravz --exclude-from sync-exclude -e ssh --delete ./live/ lukeo@web.engr.illinois.edu:~/public_html/.
+rsync -ravz --exclude-from sync-exclude -e ssh --delete ./live/ lukeo@webhost.engr.illinois.edu:~/public_html/.
