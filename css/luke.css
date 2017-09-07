@@ -1,0 +1,124 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+body > .container {
+  padding: 10px 15px 0;
+}
+
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+ul.bibliography {
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 110%;
+}
+
+ul.bibliography li {
+    padding-bottom: 15px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+
+.dl-horizontal dt{
+    text-align: left;
+    margin-bottom: 1em;
+    width: auto;
+    padding-right: 1em;
+}
+
+.dl-horizontal dd{
+    margin-left: 0;
+    margin-bottom: 1em;
+}
+
+.topline {
+  border-top: 1px solid #e5e5e5;
+}
+
+i.fa-fat:before {
+  padding-right: 10px;
+}
+
+ul.contact ul.fa-ul {
+    list-style-type: none;
+}
+
+ul.contact .fa-li {
+    top: 5px;
+}
+
+.student-name {
+  font-weight: bold;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover {
+    background-color: #1C3862;
+}
+
+ul.sidelist li {
+  padding-bottom: 15px;
+}
+
+resimg {
+  font-size: 75%;
+}
