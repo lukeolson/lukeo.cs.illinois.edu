@@ -5,15 +5,15 @@
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
-files = ['index.mako', 'research.mako', 'teaching.mako']
-
-for f in files:
-    fo = './live-old/' + f.strip('.mako') + '.html'
-    with open(f, 'r') as fin, open(fo, 'w') as fout:
-        print("generating %s -> %s" % (f, fo))
-        lookup = TemplateLookup(["."])
-        template = Template(fin.read(), lookup=lookup, output_encoding='utf8')
-        fout.write(template.render())
+#files = ['index.mako', 'research.mako', 'teaching.mako']
+#
+#for f in files:
+#    fo = './live-old/' + f.strip('.mako') + '.html'
+#    with open(f, 'r') as fin, open(fo, 'w') as fout:
+#        print("generating %s -> %s" % (f, fo))
+#        lookup = TemplateLookup(["."])
+#        template = Template(fin.read(), lookup=lookup, output_encoding='utf8')
+#        fout.write(template.render())
 
 import io
 import os
@@ -21,7 +21,6 @@ import time
 import yaml
 import shutil
 from jinja2 import Environment, FileSystemLoader
-import generate_submission_data
 
 # make the live web directory if needed
 # move old to a timestamp just in case
@@ -52,6 +51,6 @@ for d in livedirs:
         shutil.copytree(d, os.path.join(liveweb, d))
 
 # copy these files as-is to the webdir
- livefiles = ['robots.txt']
+livefiles = ['robots.txt']
 for f in livefiles:
     shutil.copyfile(f, os.path.join(liveweb, f))
