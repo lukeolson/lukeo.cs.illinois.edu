@@ -78,45 +78,16 @@ ul.bibliography li {
   }
 }
 
-.dl-horizontal dt{
-    text-align: left;
-    margin-bottom: 1em;
-    width: auto;
-    padding-right: 1em;
-}
-
-.dl-horizontal dd{
-    margin-left: 0;
-    margin-bottom: 1em;
-}
-
 .topline {
   border-top: 1px solid #e5e5e5;
 }
 
-i.fa-fat:before {
-  padding-right: 10px;
-}
-
-ul.contact ul.fa-ul {
-    list-style-type: none;
-}
-
-ul.contact .fa-li {
-    top: 5px;
-}
-
-.student-name {
-  font-weight: bold;
-}
-
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:hover {
+.nav-item .nav-link.active {
     background-color: #1C3862;
 }
 
 ul.sidelist li {
-  padding-bottom: 15px;
+  padding: 10px;
 }
 
 resimg {

@@ -195,7 +195,7 @@ def generate_pubs(bibfile):
         entry = {}
 
         if 'pdf' in rawentry:
-            print rawentry
+            print(rawentry)
         # first three: id, type, year
         entry['id'] = rawentry.pop('ID')
         entry['type'] = rawentry.pop('ENTRYTYPE')

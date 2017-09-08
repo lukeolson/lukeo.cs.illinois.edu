@@ -20,6 +20,9 @@ import os
 import time
 import yaml
 import shutil
+import yaml
+from codecs import open
+import makebib
 from jinja2 import Environment, FileSystemLoader
 
 # make the live web directory if needed
@@ -34,11 +37,22 @@ os.makedirs(liveweb)
 
 # parse, render each template here
 env = Environment(loader=FileSystemLoader('./'))
-files = ['_index.html']
+files = ['_index.html', '_research.html']
+
+pubs = makebib.generate_pubs('refs.bib')
+
+with open("students.yml", "r", encoding="utf-8") as inf:
+  students = yaml.load(inf)
+
+with open("resimg.yml", "r", encoding="utf-8") as inf:
+  resimg = yaml.load(inf)
 
 # now render the pages
 for f in files:
     template_vars = {}
+    template_vars['pubs'] = pubs
+    template_vars['students'] = students
+    template_vars['resimg'] = resimg
 
     html = env.get_template(f).render(template_vars)
     with io.open(os.path.join('./live/', f[1:]), 'w', encoding='utf8') as fout:

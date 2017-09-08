@@ -1,3 +1,10 @@
+{% set navbar = [
+    ('index.html',    'Home'),
+    ('research.html', 'Research'),
+    ('teaching.html', 'Teaching')
+] -%}
+{% set active_page = active_page|default('Home') -%}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,12 +30,19 @@
   <body>
 
     <div class="container">
-      <div class="header">
+      <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="${self.attr.indexactive}"><a href="index.html">Home</a></li>
-            <li role="presentation" class="${self.attr.researchactive}"><a href="research.html">Research</a></li>
-            <li role="presentation" class="${self.attr.teachingactive}"><a href="teaching.html">Teaching</a></li>
+            {% for href, id in navbar %}
+            <li class="nav-item">
+            <a {% if id == active_page %}class="nav-link active"{% else %}class="nav-link"{% endif %} href="{{ href|e }}">{{ id|e }} {% if id == active_page %}<span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            {% endfor %}
+            <!--
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="research.html">Research</a></li>
+            <li class="nav-item"><a class="nav-link" href="teaching.html">Teaching</a></li>
+            -->
           </ul>
         </nav>
         <h3 class="text-muted">Luke Olson</h3>
@@ -43,8 +57,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
 
     <!-- GA -->
     <script>
@@ -57,6 +71,9 @@
       ga('send', 'pageview');
 
     </script>
+
+    {% block extra_scripts %}
+    {% endblock %}
 
   </body>
 </html>
