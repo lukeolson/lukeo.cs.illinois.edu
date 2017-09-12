@@ -25,6 +25,14 @@ from codecs import open
 import makebib
 from jinja2 import Environment, FileSystemLoader
 
+jinja_env = Environment(
+    keep_trailing_newline = False,
+    lstrip_blocks = True,
+	trim_blocks = True,
+	autoescape = False,
+	loader = FileSystemLoader(os.path.abspath('.'))
+)
+
 # make the live web directory if needed
 # move old to a timestamp just in case
 liveweb = './live'
@@ -36,7 +44,6 @@ if os.path.exists(liveweb):
 os.makedirs(liveweb)
 
 # parse, render each template here
-env = Environment(loader=FileSystemLoader('./'))
 files = ['_index.html', '_research.html']
 
 pubs = makebib.generate_pubs('refs.bib')
@@ -54,7 +61,8 @@ for f in files:
     template_vars['students'] = students
     template_vars['resimg'] = resimg
 
-    html = env.get_template(f).render(template_vars)
+    template = jinja_env.get_template(f)
+    html = template.render(template_vars)
     with io.open(os.path.join('./live/', f[1:]), 'w', encoding='utf8') as fout:
         fout.write(html)
 
