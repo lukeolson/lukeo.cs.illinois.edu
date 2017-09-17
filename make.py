@@ -76,7 +76,7 @@ if os.path.exists(liveweb):
 os.makedirs(liveweb)
 
 # parse, render each template here
-files = ['_index.html', '_research.html']
+files = ['_index.html', '_research.html', '_teaching.html']
 
 pubs = makebib.generate_pubs('refs.bib')
 
@@ -97,12 +97,17 @@ with open("students.yml", "r", encoding="utf-8") as inf:
 with open("resimg.yml", "r", encoding="utf-8") as inf:
   resimg = yaml.load(inf)
 
+with open("courses.yml", "r", encoding="utf-8") as inf:
+  courses = yaml.load(inf)
+  courses = courses[1:]
+
 # now render the pages
 for f in files:
     template_vars = {}
     template_vars['pubs'] = pubs
     template_vars['students'] = students
     template_vars['resimg'] = resimg
+    template_vars['courses'] = courses
 
     template = jinja_env.get_template(f)
     html = template.render(template_vars)
