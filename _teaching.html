@@ -1,0 +1,52 @@
+{% extends "_layout.html" %}
+{% set active_page = "Teaching" %}
+{% block title %}
+Luke Olson @ Illinois - Teaching
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-muted">Courses </h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table table-hover">
+        <thead><tr> <th>Term</th> <th>Course</th> <th>Institution</th> </tr></thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+            <td>{{course["year"]}}</td>
+            <td>
+            {% if 'url' in  course %}
+              <a href="{{course['url']}}">{{course["course"]}}</a>
+            {% else %}
+              {{course["course"]}}
+            {% endif %}
+            </td>
+            <td>
+            {% if 'inst' in course %}
+              ({{course["inst"]}})
+            {% endif %}
+            </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+      </div>
+    </div>
+
+  </div>
+
+  {% block extra_scripts %}
+    <script>
+      $('.bibtex').click(function(){
+        $('> .bibtex-body', this).show();
+      })
+    </script>
+  {% endblock %}
+{% endblock %}
