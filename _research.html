@@ -34,59 +34,128 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-      <div class="topline"></div>
-      <h4 class="text-muted" id="students">Students</h4>
+        <div class="topline"></div>
+        <h4 class="text-muted" id="students">Students</h4>
       </div>
     </div>
 
     {% for s in students if s['category'] == 'current' %}
 
-        {% if (loop.index-1) == 0 %}
-    <div class="row">
-        {% elif (loop.index-1) % 3 == 0 %}
-    </div>
-    <div class="row">
-        {% endif %}
-
-      <div class="col-md-4">
-        <div class="card" style="border-width: 0px;">
-          {% if 'image' in s %}
-          <img src="images/{{s['image']}}" alt="{{s['name']}}" class="rounded mx-auto" style="height: 150px;">
-          {% else %}
-          <img src="images/headshot.png" alt="{{s['name']}}" class="rounded">
-          {% endif %}
-          {% if 'blurb' in s %}
-          <div class="card-block">
-            {% if 'url' in s %}
-            <a href="{{s['url']}}">
-            {% endif %}
-            {{ s['name'] }}
-            {% if 'url' in s %}
-            <i class="fa fa-external-link" style="padding-left: 5px;"></i>
-            </a>
-            {% endif %}
-            <p class="card-text">
-            {{ s['blurb'] }}
-            </p>
+      {% if loop.first %}
+        <div class="row resimg">
+          <div class="col-md-12">
+            <div class="card-deck">
+      {% elif loop.index0 is divisibleby 3 and not loop.last %}
+            </div>
           </div>
-          {% endif %}
         </div>
+        <div class="row resimg">
+          <div class="col-md-12">
+            <div class="card-deck">
+      {% endif %}
 
-      </div>
+            <div class="card">
+              {% if 'image' in s %}
+              <img src="images/{{s['image']}}" alt="{{s['name']}}" class="card-img-top rounded">
+              {% else %}
+              <img src="images/headshot.png" alt="{{s['name']}}" class="card-img-top rounded">
+              {% endif %}
+
+              <div class="card-body">
+                <h6 class="card-title">
+                  {% if 'url' in s %}
+                  <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>
+                  {% else %}
+                    {{s['name']}}
+                  {% endif %}
+                </h6>
+
+                <small>
+                  {{ s['blurb'] }}
+                </small>
+              </div>
+            </div>
+
+      {% if loop.last %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
     {% endfor %}
-    </div>
 
     <div class="row">
       <div class="col-md-12">
         <div class="topline"></div>
-        <h4 class="text-muted" id="images">Former Students</h4>
+        <h4 class="text-muted" id="former">Former Students</h4>
+        <ul class="fa-ul">
+        {% for s in students if s['category'] == 'former' %}
+          <li>
+            {% if 'url' in s %}
+              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>,
+            {% else %}
+              {{s["name"]}},
+            {% endif %}
+            {{s["degree"]}}, {{s["year"]}}
+            {% if 'dept' in s %}
+              ({{s["dept"]}})
+            {% endif %}
+            {% if 'blurb' in s or 'thesis' in s %}
+              <ul>
+                {% if 'thesis' in s %}
+                  {% if 'thesisurl' in s %}
+                  <li>Thesis: <a href="{{s['thesisurl']}}">{{s['thesis']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a></li>
+                  {% else %}
+                  <li>{{s["thesis"]}}</li>
+                  {% endif %}
+                {% endif %}
+                {% if 'blurb' in s %}
+                  <li>{{s["blurb"]}}</li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <div class="topline"></div>
-        <h4 class="text-muted" id="images">Publications</h4>
+        <h4 class="text-muted" id="publications">Publications</h4>
+        <ul class="fa-ul bibliography">
+          {% for entry in pubs %}
+            <li><a href="#{{entry['id']}}"><i id="{{entry['id']}}" class="fa-li fa fa-caret-right"></i></a>
+              {{entry["html"]}}
+              <br/>
+              <a data-toggle="collapse" href="#collapse{{entry['id']}}" aria-expanded="false" aria-controls="collapse{{entry['id']}}">
+                <i class="fa fa-toggle-on"></i>BibTeX
+              </a>
+
+              {% if 'pdf' in entry %}
+                &nbsp;
+                <a href="{{entry['pdf']}}"><i class="fa fa-file-pdf-o"></i>PDF</a>
+              {% endif %}
+
+              {% if 'doi' in entry %}
+                &nbsp;
+                <a href="http://doi.org/{{entry['doi']}}"><i class="fa fa-external-link"></i>DOI: {{entry["doi"]}}</a>
+              {% endif %}
+
+              {% if 'url' in entry %}
+                &nbsp;
+                <a href="{{entry['url']}}"><i class="fa fa-external-link-square"></i>URL</a>
+              {% endif %}
+            </li>
+            <div class="collapse bibtex" id="collapse{{entry['id']}}">
+              <pre style="font-size: 10px;">
+
+{{entry["bibtex"]}}
+              </pre>
+            </div>
+          {% endfor %}
+        </ul>
       </div>
     </div>
 
@@ -96,6 +165,41 @@ Luke Olson @ Illinois - Research
         <h4 class="text-muted" id="images">Some Images</h4>
       </div>
     </div>
+
+
+    {% for res in resimg %}
+
+      {% if loop.first %}
+        <div class="row resimg">
+          <div class="col-md-12">
+            <div class="card-deck">
+      {% elif loop.index0 is divisibleby 3 and not loop.last %}
+            </div>
+          </div>
+        </div>
+        <div class="row resimg">
+          <div class="col-md-12">
+            <div class="card-deck">
+      {% endif %}
+
+            <div class="card">
+              <img class="card-img-top" src="{{res['image']}}" alt="{{res['title']}}">
+              <div class="card-body">
+                <footer class="blockquote-footer">
+                  <small>
+                  {{res["title"]}}: {{res["desc"]}}
+                  </small>
+                </footer>
+              </div>
+            </div>
+
+      {% if loop.last %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
 
   </div>
 

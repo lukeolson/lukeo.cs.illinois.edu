@@ -8,7 +8,6 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -80,6 +79,7 @@ ul.bibliography li {
 
 .topline {
   border-top: 1px solid #e5e5e5;
+  margin-top: 20px;
 }
 
 .nav-item .nav-link.active {
@@ -90,6 +90,10 @@ ul.sidelist li {
   padding: 10px;
 }
 
-resimg {
-  font-size: 75%;
+.resimg {
+  margin-top: 10px;
+}
+
+.bibtex {
+  background-color: #FCF6E5;
 }

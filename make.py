@@ -5,6 +5,38 @@
 from mako.template import Template
 from mako.lookup import TemplateLookup
 
+def formatbib(entry):
+    """
+    reformat to 80 charachters, keeping alignment with = {
+    """
+    import textwrap
+    n = 80
+
+    lines = entry.split('\n')
+
+    newlines = []
+    for line in lines:
+        if len(line)>n:
+            # wrap the text to n
+            multiline = textwrap.wrap(line, n)
+
+            # preserve the top line and determine the { location
+            topline = multiline[0]
+            padlength = topline.find('{') + 1
+
+            # rewrap the rest knowing the indent length
+            multiline = multiline[1:]
+            multiline = ' '.join(multiline)
+            multiline = textwrap.wrap(multiline, n - padlength)
+
+            # padd and join
+            padding = '\n' + ' ' * padlength
+            newline = padding.join([topline]+multiline)
+            newlines.append(newline)
+        else:
+            newlines.append(line)
+    return '\n'.join(newlines)
+
 #files = ['index.mako', 'research.mako', 'teaching.mako']
 #
 #for f in files:
@@ -48,6 +80,17 @@ files = ['_index.html', '_research.html']
 
 pubs = makebib.generate_pubs('refs.bib')
 
+for p in pubs:
+    if 'pdf' not in p:
+        pdfpath = './files/' + p['id'] + '.pdf'
+        if os.path.exists(pdfpath):
+            p['pdf'] = pdfpath
+        else:
+            print('No pdf found for %s' % p['id'])
+
+    p['bibtex'] = formatbib(p['bibtex'])
+
+
 with open("students.yml", "r", encoding="utf-8") as inf:
   students = yaml.load(inf)
 
@@ -67,7 +110,7 @@ for f in files:
         fout.write(html)
 
 # copy these directories as-is to the webdir
-livedirs = ['font-awesome', 'bootstrap', 'css', 'images', 'resimg', 'spgemmdata']
+livedirs = ['font-awesome', 'bootstrap', 'css', 'images', 'resimg', 'spgemmdata', 'files']
 for d in livedirs:
     if os.path.isdir(d):
         shutil.copytree(d, os.path.join(liveweb, d))
