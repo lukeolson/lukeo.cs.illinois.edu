@@ -22,11 +22,11 @@ Luke Olson @ Illinois - Research
           </div>
           <div class="col-md-6">
             Jump to:
-            <ul class="list-group">
+            <div class="list-group">
               <a href="research.html#students" class="list-group-item">Students</a>
               <a href="research.html#publications" class="list-group-item">Publications</a>
               <a href="research.html#images" class="list-group-item">Research images</a>
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -147,13 +147,13 @@ Luke Olson @ Illinois - Research
                 &nbsp;
                 <a href="{{entry['url']}}"><i class="fa fa-external-link-square"></i>URL</a>
               {% endif %}
-            </li>
             <div class="collapse bibtex" id="collapse{{entry['id']}}">
               <pre style="font-size: 10px;">
 
 {{entry["bibtex"]}}
               </pre>
             </div>
+            </li>
           {% endfor %}
         </ul>
       </div>
