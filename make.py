@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 
-# Mako script to generate live
-
-from mako.template import Template
-from mako.lookup import TemplateLookup
-
 def formatbib(entry):
     """
     reformat to 80 charachters, keeping alignment with = {
@@ -115,7 +110,7 @@ for f in files:
         fout.write(html)
 
 # copy these directories as-is to the webdir
-livedirs = ['font-awesome', 'bootstrap', 'css', 'images', 'resimg', 'spgemmdata', 'files']
+livedirs = ['css', 'images', 'resimg', 'spgemmdata', 'files']
 for d in livedirs:
     if os.path.isdir(d):
         shutil.copytree(d, os.path.join(liveweb, d))
