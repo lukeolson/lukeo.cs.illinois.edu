@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+import io
+import os
+import time
+import yaml
+import shutil
+import yaml
+from codecs import open
+import makebib
+from jinja2 import Environment, FileSystemLoader
+
 
 def formatbib(entry):
     """
@@ -11,7 +21,7 @@ def formatbib(entry):
 
     newlines = []
     for line in lines:
-        if len(line)>n:
+        if len(line) > n:
             # wrap the text to n
             multiline = textwrap.wrap(line, n)
 
@@ -32,32 +42,23 @@ def formatbib(entry):
             newlines.append(line)
     return '\n'.join(newlines)
 
-#files = ['index.mako', 'research.mako', 'teaching.mako']
+# files = ['index.mako', 'research.mako', 'teaching.mako']
 #
-#for f in files:
-#    fo = './live-old/' + f.strip('.mako') + '.html'
-#    with open(f, 'r') as fin, open(fo, 'w') as fout:
-#        print("generating %s -> %s" % (f, fo))
-#        lookup = TemplateLookup(["."])
-#        template = Template(fin.read(), lookup=lookup, output_encoding='utf8')
-#        fout.write(template.render())
+# for f in files:
+#     fo = './live-old/' + f.strip('.mako') + '.html'
+#     with open(f, 'r') as fin, open(fo, 'w') as fout:
+#         print("generating %s -> %s" % (f, fo))
+#         lookup = TemplateLookup(["."])
+#         template = Template(fin.read(), lookup=lookup, output_encoding='utf8')
+#         fout.write(template.render())
 
-import io
-import os
-import time
-import yaml
-import shutil
-import yaml
-from codecs import open
-import makebib
-from jinja2 import Environment, FileSystemLoader
 
 jinja_env = Environment(
-    keep_trailing_newline = False,
-    lstrip_blocks = True,
-	trim_blocks = True,
-	autoescape = False,
-	loader = FileSystemLoader(os.path.abspath('.'))
+    keep_trailing_newline=False,
+    lstrip_blocks=True,
+    trim_blocks=True,
+    autoescape=False,
+    loader=FileSystemLoader(os.path.abspath('.'))
 )
 
 # make the live web directory if needed
@@ -87,14 +88,14 @@ for p in pubs:
 
 
 with open("students.yml", "r", encoding="utf-8") as inf:
-  students = yaml.load(inf)
+    students = yaml.load(inf)
 
 with open("resimg.yml", "r", encoding="utf-8") as inf:
-  resimg = yaml.load(inf)
+    resimg = yaml.load(inf)
 
 with open("courses.yml", "r", encoding="utf-8") as inf:
-  courses = yaml.load(inf)
-  courses = courses[1:]
+    courses = yaml.load(inf)
+    courses = courses[1:]
 
 # now render the pages
 for f in files:

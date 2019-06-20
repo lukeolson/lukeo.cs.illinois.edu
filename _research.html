@@ -87,9 +87,9 @@ Luke Olson @ Illinois - Research
     <div class="row">
       <div class="col-md-12">
         <div class="topline"></div>
-        <h4 class="text-muted" id="former">Former Students</h4>
+        <h4 class="text-muted" id="former">Former PhD Students</h4>
         <ul class="fa-ul">
-        {% for s in students if s['category'] == 'former' %}
+        {% for s in students if s['category'] == 'former' and s['degree'] == 'PhD' %}
           <li>
             {% if 'url' in s %}
               <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>,
@@ -116,7 +116,37 @@ Luke Olson @ Illinois - Research
             {% endif %}
           </li>
         {% endfor %}
-      </ul>
+        </ul>
+        <h4 class="text-muted" id="former">Former MS Students</h4>
+        <ul class="fa-ul">
+        {% for s in students if s['category'] == 'former' and s['degree'] == 'MS' %}
+          <li>
+            {% if 'url' in s %}
+              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>,
+            {% else %}
+              {{s["name"]}},
+            {% endif %}
+            {{s["degree"]}}, {{s["year"]}}
+            {% if 'dept' in s %}
+              ({{s["dept"]}})
+            {% endif %}
+            {% if 'blurb' in s or 'thesis' in s %}
+              <ul>
+                {% if 'thesis' in s %}
+                  {% if 'thesisurl' in s %}
+                  <li>Thesis: <a href="{{s['thesisurl']}}">{{s['thesis']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a></li>
+                  {% else %}
+                  <li>{{s["thesis"]}}</li>
+                  {% endif %}
+                {% endif %}
+                {% if 'blurb' in s %}
+                  <li>{{s["blurb"]}}</li>
+                {% endif %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
       </div>
     </div>
 
