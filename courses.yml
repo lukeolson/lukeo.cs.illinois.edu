@@ -3,20 +3,42 @@
   inst:
   course:
 
+- year: Fall 2019
+  course: CS450 - Numerical Analysis
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs450-f19/
+
+- year: Spring 2019
+  url: https://relate.cs.illinois.edu/course/cs199py-sp19b/
+  inst: Illinois
+  course: CS 199py1 - Python for Data
+
+- year: Fall 2018
+  course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs556-f18/
+
+- year: Fall 2017
+  course: CS357 - Intro to Numerical Methods
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs357-f17
+
+- year: Spring 2017
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs555-s17/
+
 - year: Fall 2016
   course: CS556 - Iterative and Multigrid Methods for Large, Sparse systems
   inst: Illinois
-  url: https://relate.cs.illinois.edu/course/cs556-f16/
 
 - year: Spring 2016
   course: CS555 - Numerical Methods for Partial Differential Equations
   inst: Illinois
-  url: https://relate.cs.illinois.edu/course/cs555-s16/
 
 - year: Fall 2015
   course: CS357 - Intro to Numerical Methods
   inst: Illinois
-  url: https://relate.cs.illinois.edu/course/cs357-f15
 
 - year: Spring 2015
   course: CS555 - Numerical Methods for Partial Differential Equations
