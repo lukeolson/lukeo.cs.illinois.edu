@@ -11,9 +11,16 @@
   thesis:
   dept:
 
+- name: Amanda Bienz
+  url: http://bienz2.web.engr.illinois.edu/
+  category: postdoc
+  blurb: Parallel algorithms, HPC, multigrid
+  image: amanda-bienz.jpg
+
 - name: Shelby Lockhart
   category: current
   blurb: scalable Krylov methods, preconditioning, hybrid programming
+  url: https://sll2.web.illinois.edu
   image: headshot.png
 
 - name: Andrew Reisner
@@ -29,6 +36,7 @@
 
 - name: Lukas Spies
   category: current
+  url: http://lspies.web.illinois.edu/
   blurb: GPUs, structured solvers
   image: headshot.png
 

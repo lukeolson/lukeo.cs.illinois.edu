@@ -35,25 +35,20 @@ Luke Olson @ Illinois - Research
     <div class="row">
       <div class="col-md-12">
         <div class="topline"></div>
-        <h4 class="text-muted" id="students">Students</h4>
+        <h4 class="text-muted" id="students">Group</h4>
       </div>
     </div>
 
-    {% for s in students if s['category'] == 'current' %}
-
-      {% if loop.first %}
+    {% set rows = 2 %}
+    {% set cols = 4 %}
+    {% for i in range(rows) %}
         <div class="row resimg">
           <div class="col-md-12">
             <div class="card-deck">
-      {% elif loop.index0 is divisibleby 3 and not loop.last %}
-            </div>
-          </div>
-        </div>
-        <div class="row resimg">
-          <div class="col-md-12">
-            <div class="card-deck">
-      {% endif %}
-
+      {% for j in range(cols) %}
+        {% set k = i*cols + j %}
+        {% if k < currentstudents|length %}
+          {% set s = currentstudents[k] %}
             <div class="card">
               {% if 'image' in s %}
               <img src="images/{{s['image']}}" alt="{{s['name']}}" class="card-img-top rounded">
@@ -69,19 +64,24 @@ Luke Olson @ Illinois - Research
                     {{s['name']}}
                   {% endif %}
                 </h6>
+                {% if s['category'] == 'postdoc' %}
+                  postdoc
+                  <br/>
+                {% endif %}
 
                 <small>
                   {{ s['blurb'] }}
                 </small>
               </div>
             </div>
-
-      {% if loop.last %}
+        {% else %}
+            <div class="card" style="border: none;">
+            </div>
+        {% endif %}
+      {% endfor %}
             </div>
           </div>
         </div>
-      {% endif %}
-
     {% endfor %}
 
     <div class="row">

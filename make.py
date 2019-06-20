@@ -91,6 +91,7 @@ for p in pubs:
 
 with open("students.yml", "r", encoding="utf-8") as inf:
     students = yaml.load(inf)
+    currentstudents = [s for s in students if s['category'] == 'current' or s['category'] == 'postdoc']
 
 with open("resimg.yml", "r", encoding="utf-8") as inf:
     resimg = yaml.load(inf)
@@ -104,6 +105,7 @@ for f in files:
     template_vars = {}
     template_vars['pubs'] = pubs
     template_vars['students'] = students
+    template_vars['currentstudents'] = currentstudents
     template_vars['resimg'] = resimg
     template_vars['courses'] = courses
 
