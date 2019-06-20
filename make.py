@@ -75,6 +75,8 @@ os.makedirs(liveweb)
 files = ['_index.html', '_research.html', '_teaching.html']
 
 pubs = makebib.generate_pubs('refs.bib')
+pubsexclude = ['2015_DaOlMiGa_partition']
+pubs = [p for p in pubs if p['id'] not in pubsexclude]
 
 for p in pubs:
     if 'pdf' not in p:
