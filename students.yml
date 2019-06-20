@@ -43,7 +43,7 @@
   image: headshot.png
 
 - name: Amanda Bienz
-  url: http://web.engr.illinois.edu/~bienz2/
+  url: http://bienz2.web.engr.illinois.edu/
   year: 2018
   degree: PhD
   category: former
@@ -74,7 +74,7 @@
   category: former
   degree: PhD
   year: 2015
-  url: https://research.nvidia.com/users/steven-dalton
+  url: https://research.nvidia.com/person/steven-dalton
   blurb: algebraic multigrid, sparse matrix computaitons, GPU, high-throughput algorithms
   thesis: Data parallel algebraic multigrid
   thesisurl: http://hdl.handle.net/2142/72802
