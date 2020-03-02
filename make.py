@@ -90,14 +90,14 @@ for p in pubs:
 
 
 with open("students.yml", "r", encoding="utf-8") as inf:
-    students = yaml.load(inf)
+    students = yaml.load(inf, Loader=yaml.FullLoader)
     currentstudents = [s for s in students if s['category'] == 'current' or s['category'] == 'postdoc']
 
 with open("resimg.yml", "r", encoding="utf-8") as inf:
-    resimg = yaml.load(inf)
+    resimg = yaml.load(inf, Loader=yaml.FullLoader)
 
 with open("courses.yml", "r", encoding="utf-8") as inf:
-    courses = yaml.load(inf)
+    courses = yaml.load(inf, Loader=yaml.FullLoader)
     courses = courses[1:]
 
 # now render the pages

@@ -21,13 +21,7 @@
   category: current
   blurb: scalable Krylov methods, preconditioning, hybrid programming
   url: https://sll2.web.illinois.edu
-  image: headshot.png
-
-- name: Andrew Reisner
-  category: current
-  url: http://www.reisner.co
-  blurb: structured solvers, electric field computations
-  image: andrew-reisner.jpg
+  image: shelby-lockhart.jpg
 
 - name: Pete Sentz
   category: current
@@ -38,7 +32,7 @@
   category: current
   url: http://lspies.web.illinois.edu/
   blurb: GPUs, structured solvers
-  image: headshot.png
+  image: lukas-spies.jpg
 
 - name: Yuchen Su
   category: current
@@ -47,8 +41,17 @@
 
 - name: Alexey Voronin
   category: current
+  url: https://lexeyv.github.io/
   blurb: scalable solvers, multigrid
-  image: headshot.png
+  image: alexey-voronin.png
+
+- name: Andrew Reisner
+  year: 2019
+  degree: PhD
+  category: former
+  url: http://www.reisner.co
+  blurb: structured solvers, electric field computations
+  thesis: Robust Structured Multigrid at Extreme Scales
 
 - name: Amanda Bienz
   url: http://bienz2.web.engr.illinois.edu/

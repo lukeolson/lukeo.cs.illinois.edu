@@ -40,7 +40,7 @@ Luke Olson @ Illinois - Research
     </div>
 
     {% set rows = 2 %}
-    {% set cols = 4 %}
+    {% set cols = 3 %}
     {% for i in range(rows) %}
         <div class="row resimg">
           <div class="col-md-12">
@@ -87,7 +87,7 @@ Luke Olson @ Illinois - Research
     <div class="row">
       <div class="col-md-12">
         <div class="topline"></div>
-        <h4 class="text-muted" id="former">Former PhD Students</h4>
+        <h4 class="text-muted" id="formerPhD">Former PhD Students</h4>
         <ul class="fa-ul">
         {% for s in students if s['category'] == 'former' and s['degree'] == 'PhD' %}
           <li>
@@ -117,7 +117,7 @@ Luke Olson @ Illinois - Research
           </li>
         {% endfor %}
         </ul>
-        <h4 class="text-muted" id="former">Former MS Students</h4>
+        <h4 class="text-muted" id="formerMS">Former MS Students</h4>
         <ul class="fa-ul">
         {% for s in students if s['category'] == 'former' and s['degree'] == 'MS' %}
           <li>
