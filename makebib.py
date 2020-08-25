@@ -7,7 +7,7 @@ from bibtexparser.bparser import BibTexParser
 import bibtexparser.customization as cst
 
 # list all fields and in which order they should appear in the printed bibtex
-allfields = ['author',
+allfields0 = ['author',
              'title',
              'journal',
              'year',
@@ -54,7 +54,7 @@ def tex2html(tex, styling=None):
     """
 
     while '$' in tex:
-        if styling is not 'it':
+        if styling != 'it':
             tex = tex.replace('$', '<span style="font-style: italics;">', 1)
         else:
             tex = tex.replace('$', '<span style="font-style: normal;">', 1)
@@ -78,11 +78,11 @@ def tex2html(tex, styling=None):
     if 'Olson' in tex:
         tex = '<span style="font-weight: bold;">' + tex + '</span>'
 
-    if styling is 'it':
+    if styling == 'it':
         html = '<span style="font-style: italic;">' + tex + '</span>'
-    elif styling is 'sc':
+    elif styling == 'sc':
         html = '<span style="font-variant: small-caps;">' + tex + '</span>'
-    elif styling is 'paren':
+    elif styling == 'paren':
         html = '(' + tex + ')'
     else:
         html = '<span style="font-style: normal;">' + tex + '</span>'
@@ -97,25 +97,18 @@ def whichfields(bibtype, style='siam'):
         kind of mimics the siam.bst
         """
         if bibtype == 'article':
-            allfields = ['author', 'title', 'journal', 'volume', 'year',
-                         'pages', 'note']
-
-        if bibtype == 'techreport':
-            allfields = ['author', 'title', 'number', 'institution', 'address',
-                         'month', 'year', 'note']
-
-        if (bibtype == 'inproceedings') or (bibtype == 'incollection'):
+            allfields = ['author', 'title', 'journal', 'volume', 'year', 'pages', 'note']
+        elif bibtype == 'techreport':
+            allfields = ['author', 'title', 'number', 'institution', 'address', 'month', 'year', 'note']
+        elif (bibtype == 'inproceedings') or (bibtype == 'incollection'):
             allfields = ['author', 'title', 'booktitle', 'volume', 'number',
-                         'address', 'organization', 'publisher', 'year',
-                         'note']
-
-        if bibtype == 'phdthesis':
-            allfields = ['author', 'title', 'school', 'address', 'month',
-                         'year', 'note']
-
-        if bibtype == 'inbook':
-            allfields = ['author', 'title', 'chapter', 'bookeditor', 'publisher',
-                         'year', 'note']
+                         'address', 'organization', 'publisher', 'year', 'note']
+        elif bibtype == 'phdthesis':
+            allfields = ['author', 'title', 'school', 'address', 'month', 'year', 'note']
+        elif bibtype == 'inbook':
+            allfields = ['author', 'title', 'chapter', 'bookeditor', 'publisher', 'year', 'note']
+        else:
+            allfields = allfields0
 
     styling = {}
     styling['author'] = 'sc'  # small caps
@@ -128,7 +121,7 @@ def whichfields(bibtype, style='siam'):
 def generate_bibtex(entry, bibid, bibtype):
     bibtex = '@%s{%s,\n' % (bibtype, bibid)
 
-    for field in allfields:
+    for field in allfields0:
         if field in entry:
             e = entry[field]
             if field == 'author':
@@ -154,12 +147,12 @@ def generate_html(entry, bibid, bibtype, style='siam'):
             tex = entry[field]
             if field in styling:
                 s = styling[field]
-            if (field is 'author'):
+            if field == 'author':
                 for tex in entry[field]:
                     html += tex2html(tex, s) + ', '
-            elif (field is 'year') and ('volume' in entry):
+            elif (field == 'year') and ('volume' in entry):
                 html += entry['volume'] + ' (' + tex + '), '
-            elif (field is 'volume') and ('year' in entry):
+            elif (field == 'volume') and ('year' in entry):
                 pass
             else:
                 html += tex2html(tex, s) + ', '
