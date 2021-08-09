@@ -3,6 +3,16 @@
   inst:
   course:
 
+- year: Fall 2021
+  url: href=https://relate.cs.illinois.edu/course/cs556-f21
+  inst: Illinois
+  course: CS556 - Iterative and Multigrid Methods
+
+- year: Fall 2020
+  url: href=https://relate.cs.illinois.edu/course/cs450-f20
+  inst: Illinois
+  course: CS450 - Numerical Analysis
+
 - year: Fall 2019
   course: CS450 - Numerical Analysis
   inst: Illinois
