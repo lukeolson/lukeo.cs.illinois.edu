@@ -8,31 +8,31 @@ import bibtexparser.customization as cst
 
 # list all fields and in which order they should appear in the printed bibtex
 allfields0 = ['author',
-             'title',
-             'journal',
-             'year',
-             'address',
-             'annote',
-             'booktitle',
-             'chapter',
-             'edition',
-             'editor',
-             'eprint',
-             'howpublished',
-             'institution',
-             'key',
-             'month',
-             'volume',
-             'note',
-             'number',
-             'organization',
-             'pages',
-             'publisher',
-             'school',
-             'series']
+              'title',
+              'journal',
+              'year',
+              'address',
+              'annote',
+              'booktitle',
+              'chapter',
+              'edition',
+              'editor',
+              'eprint',
+              'howpublished',
+              'institution',
+              'key',
+              'month',
+              'volume',
+              'note',
+              'number',
+              'organization',
+              'pages',
+              'publisher',
+              'school',
+              'series']
 
-alltypes = ['techreport', 'article', 'inproceedings', 'incollection',
-            'phdthesis']
+# all type of bib entries to consider
+alltypes = ['techreport', 'article', 'inproceedings', 'incollection', 'phdthesis']
 
 
 def cust(rec):
@@ -41,7 +41,7 @@ def cust(rec):
 
 
 def tex2html(tex, styling=None):
-    """
+    r"""
     simple translator from LaTeX to HTML:
         - $$ -> <i></i> if styling not 'it'
         - \& -> &amp;
@@ -60,10 +60,10 @@ def tex2html(tex, styling=None):
             tex = tex.replace('$', '<span style="font-style: normal;">', 1)
         tex = tex.replace('$', '</span>', 1)
 
-    while '\&' in tex:
-        tex = tex.replace('\&', '&amp;')
+    while r'\&' in tex:
+        tex = tex.replace(r'\&', '&amp;')
 
-    while '--' in tex:
+    while r'--' in tex:
         tex = tex.replace('--', '-')
 
     while '\rm' in tex:
@@ -93,20 +93,20 @@ def tex2html(tex, styling=None):
 def whichfields(bibtype, style='siam'):
 
     if style == 'siam':
-        """
-        kind of mimics the siam.bst
-        """
+        # mimics the siam.bst
         if bibtype == 'article':
             allfields = ['author', 'title', 'journal', 'volume', 'year', 'pages', 'note']
         elif bibtype == 'techreport':
-            allfields = ['author', 'title', 'number', 'institution', 'address', 'month', 'year', 'note']
-        elif (bibtype == 'inproceedings') or (bibtype == 'incollection'):
+            allfields = ['author', 'title', 'number', 'institution',
+                         'address', 'month', 'year', 'note']
+        elif bibtype in ['inproceedings', 'incollection']:
             allfields = ['author', 'title', 'booktitle', 'volume', 'number',
                          'address', 'organization', 'publisher', 'year', 'note']
         elif bibtype == 'phdthesis':
             allfields = ['author', 'title', 'school', 'address', 'month', 'year', 'note']
         elif bibtype == 'inbook':
-            allfields = ['author', 'title', 'chapter', 'bookeditor', 'publisher', 'year', 'note']
+            allfields = ['author', 'title', 'chapter', 'bookeditor',
+                         'publisher', 'year', 'note']
         else:
             allfields = allfields0
 
@@ -119,7 +119,7 @@ def whichfields(bibtype, style='siam'):
 
 
 def generate_bibtex(entry, bibid, bibtype):
-    bibtex = '@%s{%s,\n' % (bibtype, bibid)
+    bibtex = f'@{bibtype}{{{bibid},\n'
 
     for field in allfields0:
         if field in entry:
@@ -129,7 +129,7 @@ def generate_bibtex(entry, bibid, bibtype):
 
             # right justify the field 16 characters
             # add the entry
-            bibtex += '%s = {%s},\n' % (field.rjust(16), e)
+            bibtex += '{field:>16} = {{{e}}},\n'
 
     bibtex += '}'
 
@@ -143,10 +143,8 @@ def generate_html(entry, bibid, bibtype, style='siam'):
     html = ''
     for field in allfields:
         if field in entry:
-            s = None
             tex = entry[field]
-            if field in styling:
-                s = styling[field]
+            s = styling.get(field, None)
             if field == 'author':
                 for tex in entry[field]:
                     html += tex2html(tex, s) + ', '
@@ -177,7 +175,7 @@ def generate_pubs(bibfile):
         'url'    : some url
     """
 
-    with open(bibfile) as bibtex_file:
+    with open(bibfile, 'r', encoding="utf8") as bibtex_file:
         parser = BibTexParser()
         parser.customization = cust
         parser.homogenise_fields = False
@@ -212,5 +210,11 @@ def generate_pubs(bibfile):
 
     return pubs
 
+
 if __name__ == '__main__':
-    pubs = generate_pubs('refs.bib')
+    import sys
+    if len(sys.argv) > 1:
+        pubs = generate_pubs(sys.argv[1])
+    else:
+        pubs = generate_pubs('refs.bib')
+    print(pubs)
