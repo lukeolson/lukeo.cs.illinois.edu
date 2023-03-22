@@ -129,7 +129,7 @@ def generate_bibtex(entry, bibid, bibtype):
 
             # right justify the field 16 characters
             # add the entry
-            bibtex += '{field:>16} = {{{e}}},\n'
+            bibtex += f'{field:>16} = {{{e}}},\n'
 
     bibtex += '}'
 
