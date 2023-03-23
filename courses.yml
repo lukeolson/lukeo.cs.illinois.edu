@@ -3,6 +3,16 @@
   inst:
   course:
 
+- year: Spring 2023
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs555-s23/
+
+- year: Fall 2022
+  url: href=https://github.com/lukeolson-group/598sml-f22
+  inst: Illinois
+  course: CS598sml - Scientific Machine Learning
+
 - year: Fall 2021
   url: href=https://relate.cs.illinois.edu/course/cs556-f21
   inst: Illinois
