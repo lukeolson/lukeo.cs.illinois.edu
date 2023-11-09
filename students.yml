@@ -11,28 +11,44 @@
   thesis:
   dept:
 
-- name: Shelby Lockhart
+- name: Nick Nytko
+  degree: PhD
   category: current
-  blurb: scalable Krylov methods, preconditioning, hybrid programming
-  url: https://sll2.web.illinois.edu
-  image: shelby-lockhart.jpg
-
-- name: Pete Sentz
-  category: current
-  blurb: finite elements, reduced order modeling
-  image: headshot.png
+  url: https://nicknytko.github.io/
+  blurb: SciML, HPC, multigrid solvers
+  image: nick-nytko.jpg
 
 - name: Lukas Spies
+  degree: PhD
   category: current
   url: http://lspies.web.illinois.edu/
   blurb: GPUs, structured solvers
   image: lukas-spies.jpg
 
 - name: Alexey Voronin
+  degree: PhD
   category: current
   url: https://lexeyv.github.io/
-  blurb: scalable solvers, multigrid
+  blurb: scalable solvers, systems, multigrid
   image: alexey-voronin.png
+
+- name: Shelby Lockhart
+  year: 2023
+  degree: PhD
+  category: former
+  blurb: scalable Krylov methods, preconditioning, scalalble algorithms
+  url: https://sll2.web.illinois.edu
+  thesis: Reducing communication bottlenecks in iterative solvers
+  thesisurl: https://www.ideals.illinois.edu/items/127470
+
+- name: Pete Sentz
+  year: 2022
+  degree: PhD
+  category: former
+  url: https://appliedmath.brown.edu/people/peter-sentz
+  blurb: finite elements, reduced order modeling
+  thesis: Reduced basis approximation and error estimation of parametrized partial differential equations
+  thesisurl: https://www.ideals.illinois.edu/items/125333
 
 - name: Andrew Reisner
   year: 2019
@@ -41,6 +57,7 @@
   url: http://www.reisner.co
   blurb: structured solvers, electric field computations
   thesis: Robust Structured Multigrid at Extreme Scales
+  thesisurl: https://www.ideals.illinois.edu/items/113746
 
 - name: Amanda Bienz
   url: http://bienz2.web.engr.illinois.edu/
