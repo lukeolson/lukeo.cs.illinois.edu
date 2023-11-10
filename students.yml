@@ -14,21 +14,21 @@
 - name: Nick Nytko
   degree: PhD
   category: current
-  url: https://nicknytko.github.io/
+  url: https://nicknytko.github.io
   blurb: SciML, HPC, multigrid solvers
   image: nick-nytko.jpg
 
 - name: Lukas Spies
   degree: PhD
   category: current
-  url: http://lspies.web.illinois.edu/
+  url: http://lspies.web.illinois.edu
   blurb: GPUs, structured solvers
   image: lukas-spies.jpg
 
 - name: Alexey Voronin
   degree: PhD
   category: current
-  url: https://lexeyv.github.io/
+  url: https://lexeyv.github.io
   blurb: scalable solvers, systems, multigrid
   image: alexey-voronin.png
 
@@ -60,7 +60,7 @@
   thesisurl: https://www.ideals.illinois.edu/items/113746
 
 - name: Amanda Bienz
-  url: http://bienz2.web.engr.illinois.edu/
+  url: http://bienz2.web.engr.illinois.edu
   year: 2018
   degree: PhD
   category: former
@@ -69,7 +69,7 @@
   thesisurl: https://www.ideals.illinois.edu/handle/2142/101514
 
 - name: Natalie Beams
-  url: https://www.caam.rice.edu/~nb26/
+  url: https://nbeams.github.io
   category: former
   year: 2017
   degree: PhD
@@ -82,7 +82,7 @@
   category: former
   year: 2017
   degree: PhD
-  url: http://jonccal.people.clemson.edu/
+  url: http://jonccal.people.clemson.edu
   blurb: fault detection and recovery in numerical algorithms, multigrid
   thesis: "From detection to optimization: impact of soft errors on high-performance computing applications"
   thesisurl: http://hdl.handle.net/2142/98379
@@ -119,7 +119,7 @@
   category: former
   degree: PhD
   year: 2011
-  url: https://math.unm.edu/~jehanzeb/
+  url: https://math.unm.edu/~jehanzeb
   blurb: implicit solvation models, least-squares finite element methods, Poisson-Boltzmann equation, Poisson-Nerst-Planck     , error adaptivity, adjoint estimators
   thesis: Finite element methods for implicit solvent models
   thesisurl: http://hdl.handle.net/2142/26319
@@ -128,7 +128,7 @@
   category: former
   degree: PhD
   year: 2010
-  url: https://math.unm.edu/~schroder/
+  url: https://math.unm.edu/~schroder
   blurb: algebraic multigrid, complex non-symmetric matrices, high-order discontinuous Galerkin
   thesis: Generalizing smoothed aggregation-based algebraic multigrid
   thesisurl: http://hdl.handle.net/2142/17044
@@ -137,7 +137,7 @@
   category: former
   degree: PhD
   year: 2008
-  url: http://wnbell.com/
+  url: http://wnbell.com
   blurb: discrete exterior calculus, algebraic multigrid, hodge decomposisions
   thesis: Algebraic Multigrid For Discrete Differential Forms
   thesisurl: http://hdl.handle.net/2142/11474
@@ -146,7 +146,7 @@
   category: former
   degree: PhD
   year: 2007
-  url: http://www.davidalber.net/
+  url: http://www.davidalber.net
   blurb: parallel algebraic multigrid methods, high performance computing, combinatorial scientific computing
   thesis: Efficient Setup Algorithms for Parallel Algebraic Multigrid
   thesisurl: http://hdl.handle.net/2142/11320
