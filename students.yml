@@ -37,7 +37,7 @@
   degree: PhD
   category: former
   blurb: scalable Krylov methods, preconditioning, scalalble algorithms
-  url: https://sll2.web.illinois.edu
+  url: https://sll2.github.io
   thesis: Reducing communication bottlenecks in iterative solvers
   thesisurl: https://www.ideals.illinois.edu/items/127470
 
@@ -60,7 +60,7 @@
   thesisurl: https://www.ideals.illinois.edu/items/113746
 
 - name: Amanda Bienz
-  url: http://bienz2.web.engr.illinois.edu
+  url: https://www.amandabienz.com
   year: 2018
   degree: PhD
   category: former
