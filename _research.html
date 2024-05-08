@@ -8,10 +8,9 @@ Luke Olson @ Illinois - Research
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="text-muted">Summary </h4>
         <div class="row">
           <div class="col-md-6">
-            Research Focus:
+            <h5 class="text-muted" id="focus">Research Focus</h5>
             <ul class="fa-ul">
               <li><i class="fa-li fa fa-cogs"></i>Multigrid methods</li>
               <li><i class="fa-li fa fa-cogs"></i>Sparse matrix computations</li>
@@ -20,113 +19,25 @@ Luke Olson @ Illinois - Research
               <li><i class="fa-li fa fa-cogs"></i>Scalable solvers on GPUs, large-scale systems</li>
             </ul>
           </div>
-          <div class="col-md-6">
-            Jump to:
-            <div class="list-group">
-              <a href="research.html#students" class="list-group-item">Students</a>
-              <a href="research.html#publications" class="list-group-item">Publications</a>
-              <a href="research.html#images" class="list-group-item">Research images</a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <div class="topline"></div>
-        <h4 class="text-muted" id="students">Group</h4>
-      </div>
-    </div>
-
-    {% set rows = 2 %}
-    {% set cols = 3 %}
-    {% for i in range(rows) %}
-        <div class="row resimg">
-          <div class="col-md-12">
-            <div class="card-deck">
-      {% for j in range(cols) %}
-        {% set k = i*cols + j %}
-        {% if k < currentstudents|length %}
-          {% set s = currentstudents[k] %}
-            <div class="card">
-              {% if 'image' in s %}
-              <img src="images/{{s['image']}}" alt="{{s['name']}}" class="card-img-top rounded">
-              {% else %}
-              <img src="images/headshot.png" alt="{{s['name']}}" class="card-img-top rounded">
-              {% endif %}
-
-              <div class="card-body">
-                <h6 class="card-title">
-                  {% if 'url' in s %}
-                  <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>
-                  {% else %}
-                    {{s['name']}}
-                  {% endif %}
-                </h6>
-                {% if s['category'] == 'postdoc' %}
-                  postdoc
-                  <br/>
-                {% endif %}
-
-                <small>
-                  {{ s['blurb'] }}
-                </small>
-              </div>
-            </div>
-        {% else %}
-            <div class="card" style="border: none;">
-            </div>
-        {% endif %}
-      {% endfor %}
-            </div>
-          </div>
-        </div>
-    {% endfor %}
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="topline"></div>
-        <h4 class="text-muted" id="formerPhD">Former PhD Students</h4>
+        <h5 class="text-muted" id="formerPhD">Students</h5>
         <ul class="fa-ul">
-        {% for s in students if s['category'] == 'former' and s['degree'] == 'PhD' %}
+        {% for s in students if s['name'] != None %}
           <li>
             {% if 'url' in s %}
-              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>,
+              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>
             {% else %}
-              {{s["name"]}},
+              {{s["name"]}}
             {% endif %}
-            {{s["degree"]}}, {{s["year"]}}
-            {% if 'dept' in s %}
-              ({{s["dept"]}})
+            {{s["degree"]}}
+            {% if s["year"] %}
+            {{s["year"]}}
             {% endif %}
-            {% if 'blurb' in s or 'thesis' in s %}
-              <ul>
-                {% if 'thesis' in s %}
-                  {% if 'thesisurl' in s %}
-                  <li>Thesis: <a href="{{s['thesisurl']}}">{{s['thesis']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a></li>
-                  {% else %}
-                  <li>{{s["thesis"]}}</li>
-                  {% endif %}
-                {% endif %}
-                {% if 'blurb' in s %}
-                  <li>{{s["blurb"]}}</li>
-                {% endif %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-        </ul>
-        <h4 class="text-muted" id="formerMS">Former MS Students</h4>
-        <ul class="fa-ul">
-        {% for s in students if s['category'] == 'former' and s['degree'] == 'MS' %}
-          <li>
-            {% if 'url' in s %}
-              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>,
-            {% else %}
-              {{s["name"]}},
-            {% endif %}
-            {{s["degree"]}}, {{s["year"]}}
             {% if 'dept' in s %}
               ({{s["dept"]}})
             {% endif %}
@@ -152,8 +63,7 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-        <div class="topline"></div>
-        <h4 class="text-muted" id="publications">Publications</h4>
+        <h5 class="text-muted" id="publications">Publications</h5>
         <ul class="fa-ul bibliography">
           {% for entry in pubs %}
             <li><a href="#{{entry['id']}}"><i id="{{entry['id']}}" class="fa-li fa fa-caret-right"></i></a>
@@ -170,7 +80,7 @@ Luke Olson @ Illinois - Research
 
               {% if 'doi' in entry %}
                 &nbsp;
-                <a href="http://doi.org/{{entry['doi']}}"><i class="fa fa-external-link"></i>DOI: {{entry["doi"]}}</a>
+                <a href="https://doi.org/{{entry['doi']}}"><i class="fa fa-external-link"></i>DOI: {{entry["doi"]}}</a>
               {% endif %}
 
               {% if 'url' in entry %}
@@ -191,8 +101,7 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-        <div class="topline"></div>
-        <h4 class="text-muted" id="images">Some Images</h4>
+        <h5 class="text-muted" id="images">Some Images</h5>
       </div>
     </div>
 
