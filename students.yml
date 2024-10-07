@@ -26,11 +26,13 @@
   image: lukas-spies.jpg
 
 - name: Alexey Voronin
+  year: 2024
   degree: PhD
-  category: current
+  category: former
   url: https://lexeyv.github.io
+  thesisurl: https://www.ideals.illinois.edu/items/131345
+  thesis: Monolithic multigrid for saddle point systems
   blurb: scalable solvers, systems, multigrid
-  image: alexey-voronin.png
 
 - name: Shelby Lockhart
   year: 2023
