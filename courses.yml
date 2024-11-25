@@ -3,6 +3,11 @@
   inst:
   course:
 
+- year: Spring 2025
+  course: CS555 - Numerical Methods for Partial Differential Equations
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs555-s25/
+
 - year: Spring 2024
   course: CS555 - Numerical Methods for Partial Differential Equations
   inst: Illinois
