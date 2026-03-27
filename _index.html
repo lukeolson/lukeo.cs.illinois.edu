@@ -18,7 +18,7 @@ Luke Olson @ Illinois
         </ul>
         <address>
         <ul class="fa-ul">
-        <li><i class="fa-li fa fa-envelope" aria-hidden="true"></i>lukeo <i class="fa fa-at" aria-hidden="true"></i> illinois.edu</li>
+        <li><i class="fa-li fa fa-envelope" aria-hidden="true"></i><span id="email-link" aria-label="lukeo at illinois dot edu">lukeo [at] illinois.edu</span></li>
         <li><i class="fa-li fa fa-thumbs-up" aria-hidden="true"></i>4324 Siebel Center</li>
         <li><i class="fa-li fa fa-phone" aria-hidden="true"></i>217-244-8422</li>
         <li><i class="fa-li fa fa-university" aria-hidden="true"></i><p>Siebel Center for Computer Science<br/>
@@ -104,4 +104,18 @@ Luke Olson @ Illinois
       </div>
     </div>
   </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+  <script>
+    (function() {
+      var el = document.getElementById('email-link');
+      var addr = 'lukeo' + '@' + 'illinois.edu';
+      var a = document.createElement('a');
+      a.href = 'mailto:' + addr;
+      a.textContent = addr;
+      el.parentNode.replaceChild(a, el);
+    }());
+  </script>
 {% endblock %}
