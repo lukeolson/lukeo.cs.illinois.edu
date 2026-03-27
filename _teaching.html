@@ -23,7 +23,7 @@ Luke Olson @ Illinois - Teaching
             <td>{{course["year"]}}</td>
             <td>
             {% if 'url' in  course %}
-              <a href="{{course['url']}}">{{course["course"]}}</a>
+              <a href="{{course['url']}}">{{course["course"]}}<span class="sr-only"> ({{course["year"]}})</span></a>
             {% else %}
               {{course["course"]}}
             {% endif %}
