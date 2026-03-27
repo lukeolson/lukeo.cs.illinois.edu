@@ -6,17 +6,18 @@ Luke Olson @ Illinois - Research
 
 {% block content %}
   <div class="container">
+    <h1 class="sr-only">Research</h1>
     <div class="row">
       <div class="col-md-12">
         <div class="row">
           <div class="col-md-6">
-            <h5 class="text-muted" id="focus">Research Focus</h5>
+            <h2 class="h5 text-muted" id="focus">Research Focus</h2>
             <ul class="fa-ul">
-              <li><i class="fa-li fa fa-cogs"></i>Multigrid methods</li>
-              <li><i class="fa-li fa fa-cogs"></i>Sparse matrix computations</li>
-              <li><i class="fa-li fa fa-cogs"></i>Finite element methods</li>
-              <li><i class="fa-li fa fa-cogs"></i>High performance computing</li>
-              <li><i class="fa-li fa fa-cogs"></i>Scalable solvers on GPUs, large-scale systems</li>
+              <li><i class="fa-li fa fa-cogs" aria-hidden="true"></i>Multigrid methods</li>
+              <li><i class="fa-li fa fa-cogs" aria-hidden="true"></i>Sparse matrix computations</li>
+              <li><i class="fa-li fa fa-cogs" aria-hidden="true"></i>Finite element methods</li>
+              <li><i class="fa-li fa fa-cogs" aria-hidden="true"></i>High performance computing</li>
+              <li><i class="fa-li fa fa-cogs" aria-hidden="true"></i>Scalable solvers on GPUs, large-scale systems</li>
             </ul>
           </div>
         </div>
@@ -25,12 +26,12 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-        <h5 class="text-muted" id="formerPhD">Students</h5>
+        <h2 class="h5 text-muted" id="formerPhD">Students</h2>
         <ul class="fa-ul">
         {% for s in students if s['name'] != None %}
           <li>
             {% if 'url' in s %}
-              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a>
+              <a href="{{s['url']}}">{{s['name']}}<i class="fa fa-external-link" aria-hidden="true" style="padding-left: 5px;"></i></a>
             {% else %}
               {{s["name"]}}
             {% endif %}
@@ -45,7 +46,7 @@ Luke Olson @ Illinois - Research
               <ul>
                 {% if 'thesis' in s %}
                   {% if 'thesisurl' in s %}
-                  <li>Thesis: <a href="{{s['thesisurl']}}">{{s['thesis']}}<i class="fa fa-external-link" style="padding-left: 5px;"></i></a></li>
+                  <li>Thesis: <a href="{{s['thesisurl']}}">{{s['thesis']}}<i class="fa fa-external-link" aria-hidden="true" style="padding-left: 5px;"></i></a></li>
                   {% else %}
                   <li>{{s["thesis"]}}</li>
                   {% endif %}
@@ -63,32 +64,32 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-        <h5 class="text-muted" id="publications">Publications</h5>
+        <h2 class="h5 text-muted" id="publications">Publications</h2>
         <ul class="fa-ul bibliography">
           {% for entry in pubs %}
-            <li><a href="#{{entry['id']}}"><i id="{{entry['id']}}" class="fa-li fa fa-caret-right"></i></a>
+            <li><a href="#{{entry['id']}}" aria-label="Permalink to this publication"><i id="{{entry['id']}}" class="fa-li fa fa-caret-right" aria-hidden="true"></i></a>
               {{entry["html"]}}
               <br/>
               <a data-toggle="collapse" href="#collapse{{entry['id']}}" aria-expanded="false" aria-controls="collapse{{entry['id']}}">
-                <i class="fa fa-toggle-on"></i>BibTeX
+                <i class="fa fa-toggle-on" aria-hidden="true"></i>BibTeX
               </a>
 
               {% if 'pdf' in entry %}
                 &nbsp;
-                <a href="{{entry['pdf']}}"><i class="fa fa-file-pdf-o"></i>PDF</a>
+                <a href="{{entry['pdf']}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a>
               {% endif %}
 
               {% if 'doi' in entry %}
                 &nbsp;
-                <a href="https://doi.org/{{entry['doi']}}"><i class="fa fa-external-link"></i>DOI: {{entry["doi"]}}</a>
+                <a href="https://doi.org/{{entry['doi']}}"><i class="fa fa-external-link" aria-hidden="true"></i>DOI: {{entry["doi"]}}</a>
               {% endif %}
 
               {% if 'url' in entry %}
                 &nbsp;
-                <a href="{{entry['url']}}"><i class="fa fa-external-link-square"></i>URL</a>
+                <a href="{{entry['url']}}"><i class="fa fa-external-link-square" aria-hidden="true"></i>URL</a>
               {% endif %}
             <div class="collapse bibtex" id="collapse{{entry['id']}}">
-              <pre style="font-size: 10px;">
+              <pre style="font-size: 0.75em;">
 
 {{entry["bibtex"]}}
               </pre>
@@ -101,7 +102,7 @@ Luke Olson @ Illinois - Research
 
     <div class="row">
       <div class="col-md-12">
-        <h5 class="text-muted" id="images">Some Images</h5>
+        <h2 class="h5 text-muted" id="images">Some Images</h2>
       </div>
     </div>
 

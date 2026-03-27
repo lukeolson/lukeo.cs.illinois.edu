@@ -8,14 +8,15 @@ Luke Olson @ Illinois - Teaching
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h4 class="text-muted">Courses </h4>
+        <h1 class="h4 text-muted">Courses</h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <table class="table table-hover">
-        <thead><tr> <th>Term</th> <th>Course</th> <th>Institution</th> </tr></thead>
+        <caption class="sr-only">Courses taught by Luke Olson, listed by term</caption>
+        <thead><tr> <th scope="col">Term</th> <th scope="col">Course</th> <th scope="col">Institution</th> </tr></thead>
         <tbody>
         {% for course in courses %}
             <tr>
