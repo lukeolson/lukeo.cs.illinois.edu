@@ -70,23 +70,23 @@ Luke Olson @ Illinois - Research
             <li><a href="#{{entry['id']}}" aria-label="Permalink to this publication"><i id="{{entry['id']}}" class="fa-li fa fa-caret-right" aria-hidden="true"></i></a>
               {{entry["html"]}}
               <br/>
-              <a data-toggle="collapse" href="#collapse{{entry['id']}}" aria-expanded="false" aria-controls="collapse{{entry['id']}}">
+              <a class="pub-action" data-toggle="collapse" href="#collapse{{entry['id']}}" aria-expanded="false" aria-controls="collapse{{entry['id']}}">
                 <i class="fa fa-toggle-on" aria-hidden="true"></i>BibTeX
               </a>
 
               {% if 'pdf' in entry %}
                 &nbsp;
-                <a href="{{entry['pdf']}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a>
+                <a class="pub-action" href="{{entry['pdf']}}"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>PDF</a>
               {% endif %}
 
               {% if 'doi' in entry %}
                 &nbsp;
-                <a href="https://doi.org/{{entry['doi']}}"><i class="fa fa-external-link" aria-hidden="true"></i>DOI: {{entry["doi"]}}</a>
+                <a class="pub-action" href="https://doi.org/{{entry['doi']}}"><i class="fa fa-external-link" aria-hidden="true"></i>DOI: {{entry["doi"]}}</a>
               {% endif %}
 
               {% if 'url' in entry %}
                 &nbsp;
-                <a href="{{entry['url']}}"><i class="fa fa-external-link-square" aria-hidden="true"></i>URL</a>
+                <a class="pub-action" href="{{entry['url']}}"><i class="fa fa-external-link-square" aria-hidden="true"></i>URL</a>
               {% endif %}
             <div class="collapse bibtex" id="collapse{{entry['id']}}">
               <pre style="font-size: 0.75em;">
