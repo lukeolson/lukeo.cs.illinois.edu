@@ -93,6 +93,13 @@ button:focus-visible,
   outline-color: #ffffff;
 }
 
+/* Restore focus visibility for buttons (Bootstrap suppresses outline on .btn:focus) */
+.btn:focus-visible {
+  outline: 3px solid #1C3862;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
 /* Minimum touch target size for publication action links (WCAG 2.5.8) */
 a.pub-action {
   display: inline-block;
