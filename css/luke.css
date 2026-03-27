@@ -58,6 +58,14 @@ ul.bibliography li {
     background-color: #1C3862;
 }
 
+a {
+  color: #0060c0;
+}
+
+a:hover {
+  color: #004a96;
+}
+
 ul.sidelist li {
   padding: 10px;
 }
