@@ -40,31 +40,35 @@
 
     <a class="sr-only sr-only-focusable" href="#main-content">Skip to main content</a>
 
-    <div class="container">
-      <div class="header clearfix">
-        <nav class="navbar" aria-label="Main navigation">
-          <div class="container">
-          <p class="navbar-brand text-muted h3">Luke Olson</p>
-          <ul class="nav nav-pills justify-content-end">
-            {% for href, id in navbar %}
-            <li class="nav-item">
-            <a {% if id == active_page %}class="nav-link active"
-               {% else %}class="nav-link"
-               {% endif %}href="{{ href|e }}">{{ id|e }}
-               {% if id == active_page %}<span class="sr-only">(current)</span>{% endif %}
-            </a>
-            </li>
-            {% endfor %}
-          </ul>
-          </div>
-        </nav>
+    <header>
+      <div class="container">
+        <div class="header clearfix">
+          <nav class="navbar" aria-label="Main navigation">
+            <div class="container">
+            <p class="navbar-brand text-muted h3">Luke Olson</p>
+            <ul class="nav nav-pills justify-content-end">
+              {% for href, id in navbar %}
+              <li class="nav-item">
+              <a {% if id == active_page %}class="nav-link active"
+                 {% else %}class="nav-link"
+                 {% endif %}href="{{ href|e }}">{{ id|e }}
+                 {% if id == active_page %}<span class="sr-only">(current)</span>{% endif %}
+              </a>
+              </li>
+              {% endfor %}
+            </ul>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
+    </header>
 
     <main id="main-content">
       {% block content %}
       {% endblock %}
     </main>
+
+    <footer></footer>
 
     <!-- Placed at the end of the document so the pages load faster -->
     <!-- Optional JavaScript -->
