@@ -4,8 +4,6 @@ import os
 import time
 import yaml
 import shutil
-import yaml
-from codecs import open
 import makebib
 from jinja2 import Environment, FileSystemLoader
 
