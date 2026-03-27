@@ -105,3 +105,110 @@ a.pub-action {
   display: inline-block;
   padding: 0.25rem 0.1rem;
 }
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+  line-height: 1;
+}
+
+/* ── Dark mode ─────────────────────────────────────────────── */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  background-color: #1a1d20;
+  color: #dee2e6;
+}
+
+[data-theme="dark"] a {
+  color: #6ea8fe;
+}
+
+[data-theme="dark"] a:hover {
+  color: #9ec5fe;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #adb5bd !important;
+}
+
+[data-theme="dark"] .navbar-brand {
+  color: #adb5bd !important;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #dee2e6;
+}
+
+[data-theme="dark"] .nav-link:hover {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .nav-item .nav-link.active {
+  background-color: #1C3862;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .card {
+  background-color: #272b30;
+  border-color: #3d4348;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #272b30 !important;
+}
+
+[data-theme="dark"] .list-group-item {
+  background-color: transparent;
+  border-color: #3d4348;
+  color: #dee2e6;
+}
+
+[data-theme="dark"] .topline {
+  border-top-color: #3d4348;
+}
+
+[data-theme="dark"] .bibtex {
+  background-color: #1a2535;
+  color: #dee2e6;
+}
+
+[data-theme="dark"] pre {
+  color: #dee2e6;
+}
+
+[data-theme="dark"] .table {
+  color: #dee2e6;
+}
+
+[data-theme="dark"] .table thead th {
+  border-bottom-color: #3d4348;
+}
+
+[data-theme="dark"] .table td,
+[data-theme="dark"] .table th {
+  border-top-color: #3d4348;
+}
+
+[data-theme="dark"] .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #dee2e6;
+}
+
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] [data-toggle]:focus-visible {
+  outline-color: #6ea8fe;
+}
+
+[data-theme="dark"] .btn:focus-visible {
+  outline-color: #6ea8fe;
+}
