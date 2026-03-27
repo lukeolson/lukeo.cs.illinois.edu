@@ -3,6 +3,16 @@
   inst:
   course:
 
+- year: Spring 2026
+  course: CS598sml - Scientific Machine Learning
+  inst: Illinois
+  url: https://github.com/598sml/598sml-s26-syllabus
+
+- year: Fall 2025
+  course: CS450 - Numerical Analysis
+  inst: Illinois
+  url: https://relate.cs.illinois.edu/course/cs450-f25/
+
 - year: Spring 2025
   course: CS555 - Numerical Methods for Partial Differential Equations
   inst: Illinois
